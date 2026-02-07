@@ -1,16 +1,88 @@
-# React + Vite
+# Lucid Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI Agent for requirement analysis, architecture generation, effort estimation, and auditable decision management.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Interactive Landing Page** - Stunning animated backgrounds with Balatro shader effects
+- **Tools Section** - Showcase of AI capabilities with SpotlightCard components
+- **Future Scope** - Vision for upcoming features with ColorBends animated backgrounds
+- **AI Agent Interface** - File upload and analysis workflow with GridScan effects
+- **Responsive Design** - Fully optimized for desktop and mobile devices
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **Tailwind CSS** for styling
+- **React Router** for navigation
+- **Lucide React** for icons
+- **Three.js** based animated backgrounds (Balatro, ColorBends, GridScan)
 
-## Expanding the ESLint configuration
+## 📦 Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Clone the repository
+git clone https://github.com/DHRUVGANGAL/Frontend-Lucid.git
+
+# Navigate to project directory
+cd Frontend-Lucid
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+## 🔧 Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── Navbar.tsx          # Navigation bar
+│   ├── Home.tsx            # Landing page with sections
+│   ├── About.tsx           # Tools section
+│   ├── FutureScope.tsx     # Future features section
+│   ├── AIAgentComponent.tsx # AI analysis interface
+│   ├── Balatro.jsx         # Animated shader background
+│   ├── ColorBends.jsx      # Flowing color animation
+│   ├── GridScan.jsx        # 3D grid scanner effect
+│   ├── SpotlightCard.jsx   # Interactive card component
+│   └── TargetCursor.jsx    # Custom cursor effect
+├── App.tsx                 # Main app with routing
+├── main.tsx                # Entry point
+└── index.css               # Global styles with Tailwind
+```
+
+## 🎨 Components
+
+### Animated Backgrounds
+- **Balatro** - Psychedelic spinning shader effect
+- **ColorBends** - Flowing gradient color waves
+- **GridScan** - 3D perspective grid with scanning line
+
+### Interactive Elements
+- **SpotlightCard** - Cards with mouse-following spotlight
+- **TargetCursor** - Custom animated cursor for hover states
+
+## 🔗 Related Repositories
+
+- [Backend Lucid](https://github.com/DHRUVGANGAL/backend-lucid) - Backend API
+
+## 📄 License
+
+MIT License
+
+---
+
+Built with ❤️ by [Dhruv Gangal](https://github.com/DHRUVGANGAL)
