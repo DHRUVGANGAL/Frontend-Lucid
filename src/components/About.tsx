@@ -34,43 +34,38 @@ const About: React.FC = () => {
                     <SpotlightCard className="p-8 rounded-2xl bg-gray-900 border border-[#DE443B]" spotlightColor="rgba(0, 229, 255, 0.2)">
                         <h3 className="text-2xl font-bold text-white mb-4">Requirement Analysis</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                            Intelligent ingestion of PDF, DOCX, and TXT files with automated detection of initial requirements versus change requests and content normalization.
                         </p>
                     </SpotlightCard>
 
                     <SpotlightCard className="p-8 rounded-2xl bg-gray-900 border border-[#DE443B]" spotlightColor="rgba(0, 229, 255, 0.2)">
                         <h3 className="text-2xl font-bold text-white mb-4">Architecture Generation</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                        </p>
+                            LLM‑assisted generation of system architecture designs, followed by impact analysis; combined with a deterministic rule engine to classify risk and adjust effort factors.       </p>
                     </SpotlightCard>
 
                     <SpotlightCard className="p-8 rounded-2xl bg-gray-900 border border-[#DE443B]" spotlightColor="rgba(0, 229, 255, 0.2)">
                         <h3 className="text-2xl font-bold text-white mb-4">Effort Estimation</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                        </p>
+                            Estimates produced by LLM agents using impact data and rule‑engine outputs, with historical bias signals from “supermemory” to adjust effort multipliers.            </p>
                     </SpotlightCard>
 
                     <SpotlightCard className="p-8 rounded-2xl bg-gray-900 border border-[#DE443B]" spotlightColor="rgba(0, 229, 255, 0.2)">
                         <h3 className="text-2xl font-bold text-white mb-4">Decision Management</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                        </p>
+                            A full decision lifecycle with draft, review, approval, and implementation states, including locking rules for approved/implemented decisions.     </p>
                     </SpotlightCard>
 
                     <SpotlightCard className="p-8 rounded-2xl bg-gray-900 border border-[#DE443B]" spotlightColor="rgba(0, 229, 255, 0.2)">
                         <h3 className="text-2xl font-bold text-white mb-4">Code Generation</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                        </p>
+                            Automated transformation of approved architectural designs into high-quality, boilerplate-free code structures aligned with the project's technology stack.                        </p>
                     </SpotlightCard>
 
                     <SpotlightCard className="p-8 rounded-2xl bg-gray-900 border border-[#DE443B]" spotlightColor="rgba(0, 229, 255, 0.2)">
                         <h3 className="text-2xl font-bold text-white mb-4">Audit Trail</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                        </p>
+                            Decision records are persisted in PostgreSQL with statuses, timestamps, and structured logging for traceability of key actions.                        </p>
                     </SpotlightCard>
                 </div>
                 <div className="flex justify-center mt-10 animate-bounce">
