@@ -8,6 +8,7 @@ import ImpactAnalysisSection from '../components/impact/ImpactAnalysisSection';
 import EstimationDashboard from '../components/estimation/EstimationDashboard';
 import ExplanationSection from '../components/explanation/ExplanationSection';
 import DecisionActions from '../components/actions/DecisionActions';
+import { generateDecisionPDF } from '../utils/generateDecisionPDF';
 
 interface DecisionPageProps {
     decision: AnalysisResponse;
@@ -19,8 +20,8 @@ const DecisionPage: React.FC<DecisionPageProps> = memo(({ decision }) => {
     }, [decision.decision_id]);
 
     const handleExportReport = useCallback(() => {
-        console.log('Exporting report for:', decision.decision_id);
-    }, [decision.decision_id]);
+        generateDecisionPDF(decision);
+    }, [decision]);
 
     return (
         <div className="min-h-screen bg-black text-white">

@@ -15,6 +15,8 @@
     "clsx": "^2.1.1",
     "face-api.js": "^0.22.2",
     "gsap": "^3.14.2",
+    "jspdf": "^4.1.0",
+    "jspdf-autotable": "^5.0.7",
     "lucide-react": "^0.563.0",
     "mermaid": "^11.12.2",
     "ogl": "^1.0.11",
