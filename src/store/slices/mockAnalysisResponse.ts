@@ -5,296 +5,1290 @@ import type { AnalysisResponse } from '../types';
  * This avoids expensive API calls during development.
  */
 export const mockAnalysisResponse: AnalysisResponse = {
-    project_id: "7e80ff85-df97-49b8-87e3-9d529fc7c9c2",
-    decision_id: "d37f776e-2a9d-4ef6-9027-aa8a957c3038",
-    context_type: "change_request",
-    confidence_score: 0.95,
-    normalized_data: {
-        business_intent: "To modify HealthConnect's project details and functional requirements to better align the solution with updated operational processes, patient engagement goals, evolving business needs, increased patient volume, and feedback from stakeholders, while expanding usability and simplifying workflows.",
-        explicit_requirements: [
-            "Mandatory mobile number verification using OTP for patients",
-            "Removal of email-only registration option",
-            "Addition of patient age and gender as required fields during registration",
-            "Simplified login for doctors using hospital-provided credentials",
-            "Patients should be able to book appointments without creating an account (guest booking)",
-            "Appointment duration must be configurable per doctor",
-            "Buffer time between appointments to be automatically added by the system",
-            "Restriction on same-day multiple bookings by the same patient",
-            "Doctor availability to support multiple clinic locations",
-            "Ability for doctors to block slots for emergencies",
-            "Removal of detailed qualification display from patient-facing screens",
-            "SMS notifications to be mandatory for appointment confirmation",
-            "Email notifications to be optional",
-            "Reminder notifications to be sent 24 hours and 2 hours before appointment time",
-            "Daily appointment summary report for hospital admins",
-            "Removal of advanced analytics from Phase 1",
-            "Export reports only in Excel format for initial release"
+    "project_id": "1cad9613-b82c-4c3e-8294-f28474800136",
+    "decision_id": "5e2ead65-9f90-48db-afbf-d3f7078bdaf9",
+    "context_type": "initial_requirement",
+    "confidence_score": 0.95,
+    "normalized_data": {
+        "business_intent": "To develop HealthConnect, a comprehensive digital healthcare appointment and patient management platform, designed to streamline interactions between patients, doctors, and healthcare administrators. The system aims to replace manual, paper-based, and fragmented appointment handling processes with a centralized, secure, and scalable digital solution, improving patient experience, reducing operational inefficiencies, providing data-driven insights, reducing patient waiting time and appointment conflicts, improving doctor schedule utilization, digitizing patient appointment and basic health records, and providing transparency and visibility into healthcare operations.",
+        "explicit_requirements": [
+            "Patients, doctors, and staff must be able to register securely",
+            "Login using email/mobile number and password",
+            "Role-based access control (Patient, Doctor, Admin)",
+            "Password reset and account recovery",
+            "Optional multi-factor authentication",
+            "Create and manage patient profiles",
+            "Store basic demographic information",
+            "View appointment history",
+            "Update contact and personal details",
+            "Secure handling of patient data",
+            "Doctor profile creation and maintenance",
+            "Specialization and qualification details",
+            "Availability schedule management",
+            "Leave and unavailability tracking",
+            "Daily and weekly appointment overview",
+            "Patients can search doctors by specialization and availability",
+            "Real-time appointment slot booking",
+            "Appointment rescheduling and cancellation",
+            "Conflict prevention for double-booking",
+            "Walk-in appointment support by receptionists",
+            "Appointment confirmation notifications",
+            "Reminder notifications via SMS and Email",
+            "Cancellation and reschedule alerts",
+            "Configurable notification preferences",
+            "Overview of daily appointments",
+            "Doctor utilization metrics",
+            "Patient traffic insights",
+            "System configuration management",
+            "User role and permission management",
+            "Appointment statistics and trends",
+            "Doctor performance metrics",
+            "Patient engagement reports",
+            "Export reports in CSV/PDF format",
+            "High system availability (99.9% uptime)",
+            "Fast response times (<2 seconds for major operations)",
+            "Secure data storage and encrypted communication",
+            "Compliance with healthcare data protection standards",
+            "Scalable architecture to support multiple hospitals",
+            "Cross-browser and cross-device compatibility",
+            "Role-based authorization",
+            "Encrypted passwords and sensitive data",
+            "Secure API access",
+            "Audit logs for critical operations",
+            "Protection against common security vulnerabilities"
         ],
-        assumptions: [
-            "HealthConnect is currently under development based on the initially approved project requirements.",
-            "Additional regression and workflow testing will be performed to ensure data consistency."
+        "assumptions": [
+            "Internet connectivity will be available at healthcare facilities",
+            "Users possess basic digital literacy"
         ],
-        constraints: [
-            "Advanced analytics are removed from Phase 1 scope.",
-            "Reports for the initial release must only be exportable in Excel format.",
-            "The project timeline will be extended by an estimated 2-3 weeks."
+        "constraints": [
+            "Regulatory requirements may evolve over time",
+            "Scope changes may impact project timeline and cost"
         ],
-        ambiguities: [
-            "What constitutes 'simplified login' for doctors using 'hospital-provided credentials'?",
-            "What is the specific duration or configuration mechanism for the 'buffer time between appointments'?",
-            "How will 'doctor availability to support multiple clinic locations' be managed and displayed?",
-            "What specific 'detailed qualification display' elements are to be removed from patient-facing screens?",
-            "What are the exact rules and system behavior for the 'restriction on same-day multiple bookings by the same patient' (e.g., hard block, warning, applies to different doctors or same doctor)?"
+        "ambiguities": [
+            "Specific healthcare data protection standards for compliance are not named.",
+            "The definition of \"major operations\" for fast response times (<2 seconds) is not provided.",
+            "The target number or scale of \"multiple hospitals\" for scalable architecture is not specified.",
+            "Specific \"common security vulnerabilities\" to protect against are not detailed (e.g., OWASP Top 10)."
         ]
     },
-    rule_results: {
-        triggered_rules: ["risk_medium_change_request"],
-        risk_level: "MEDIUM",
-        effort_multiplier: 1.0,
-        flags: []
+    "rule_results": {
+        "triggered_rules": [],
+        "risk_level": "LOW",
+        "effort_multiplier": 1.0,
+        "flags": []
     },
-    requirements: {
-        functional_requirements: [
-            { id: "FR1", description: "Patients must verify their mobile number using a One-Time Password (OTP) during registration.", priority: "High" },
-            { id: "FR2", description: "The system must remove the option for patients to register using only email.", priority: "High" },
-            { id: "FR3", description: "Patient age and gender must be required fields during the registration process.", priority: "High" },
-            { id: "FR4", description: "Doctors must be able to log in using simplified hospital-provided credentials.", priority: "High" },
-            { id: "FR5", description: "Patients must be able to book appointments as a guest without creating an account.", priority: "High" },
-            { id: "FR6", description: "The system must allow appointment duration to be configured on a per-doctor basis.", priority: "High" },
-            { id: "FR7", description: "The system must automatically add a configurable buffer time between appointments.", priority: "High" },
-            { id: "FR8", description: "The system must restrict patients from making multiple bookings on the same day.", priority: "High" },
-            { id: "FR9", description: "Doctors must be able to manage their availability across multiple clinic locations.", priority: "High" },
-            { id: "FR10", description: "Doctors must be able to block specific appointment slots for emergencies.", priority: "High" },
-            { id: "FR11", description: "The system must remove detailed qualification displays from patient-facing screens.", priority: "High" },
-            { id: "FR12", description: "SMS notifications for appointment confirmation must be mandatory for patients.", priority: "High" },
-            { id: "FR13", description: "Email notifications for appointment confirmation must be optional for patients.", priority: "Medium" },
-            { id: "FR14", description: "The system must send appointment reminder notifications 24 hours and 2 hours before the scheduled appointment time.", priority: "High" },
-            { id: "FR15", description: "Hospital administrators must receive a daily appointment summary report.", priority: "High" },
-            { id: "FR16", description: "Advanced analytics functionality must be excluded from Phase 1.", priority: "High" },
-            { id: "FR17", description: "Reports for the initial release must only be exportable in Excel format.", priority: "High" }
+    "requirements": {
+        "functional_requirements": [
+            {
+                "id": "FR001",
+                "description": "The system shall allow patients, doctors, and staff to securely register accounts.",
+                "priority": "High"
+            },
+            {
+                "id": "FR002",
+                "description": "The system shall allow users to log in using their email or mobile number and password.",
+                "priority": "High"
+            },
+            {
+                "id": "FR003",
+                "description": "The system shall implement role-based access control for Patient, Doctor, and Admin roles.",
+                "priority": "High"
+            },
+            {
+                "id": "FR004",
+                "description": "The system shall provide functionality for password reset and account recovery.",
+                "priority": "High"
+            },
+            {
+                "id": "FR005",
+                "description": "The system shall support optional multi-factor authentication for user accounts.",
+                "priority": "Medium"
+            },
+            {
+                "id": "FR006",
+                "description": "The system shall allow patients to create and manage their profiles.",
+                "priority": "High"
+            },
+            {
+                "id": "FR007",
+                "description": "The system shall store basic demographic information for patient profiles.",
+                "priority": "High"
+            },
+            {
+                "id": "FR008",
+                "description": "The system shall allow patients to view their appointment history.",
+                "priority": "High"
+            },
+            {
+                "id": "FR009",
+                "description": "The system shall allow patients to update their contact and personal details.",
+                "priority": "High"
+            },
+            {
+                "id": "FR010",
+                "description": "The system shall allow doctors to create and maintain their profiles.",
+                "priority": "High"
+            },
+            {
+                "id": "FR011",
+                "description": "The system shall store doctor specialization and qualification details.",
+                "priority": "High"
+            },
+            {
+                "id": "FR012",
+                "description": "The system shall allow doctors to manage their availability schedules.",
+                "priority": "High"
+            },
+            {
+                "id": "FR013",
+                "description": "The system shall allow doctors to track and manage leave and unavailability.",
+                "priority": "High"
+            },
+            {
+                "id": "FR014",
+                "description": "The system shall provide doctors with an overview of their daily and weekly appointments.",
+                "priority": "High"
+            },
+            {
+                "id": "FR015",
+                "description": "The system shall allow patients to search for doctors by specialization and availability.",
+                "priority": "High"
+            },
+            {
+                "id": "FR016",
+                "description": "The system shall enable real-time booking of appointment slots.",
+                "priority": "High"
+            },
+            {
+                "id": "FR017",
+                "description": "The system shall allow patients to reschedule and cancel appointments.",
+                "priority": "High"
+            },
+            {
+                "id": "FR018",
+                "description": "The system shall prevent double-booking of appointment slots.",
+                "priority": "High"
+            },
+            {
+                "id": "FR019",
+                "description": "The system shall support receptionists in managing walk-in appointments.",
+                "priority": "High"
+            },
+            {
+                "id": "FR020",
+                "description": "The system shall send appointment confirmation notifications.",
+                "priority": "High"
+            },
+            {
+                "id": "FR021",
+                "description": "The system shall send appointment reminder notifications via SMS and Email.",
+                "priority": "High"
+            },
+            {
+                "id": "FR022",
+                "description": "The system shall send alerts for appointment cancellations and reschedules.",
+                "priority": "High"
+            },
+            {
+                "id": "FR023",
+                "description": "The system shall allow users to configure their notification preferences.",
+                "priority": "Medium"
+            },
+            {
+                "id": "FR024",
+                "description": "The system shall provide metrics on doctor utilization.",
+                "priority": "Medium"
+            },
+            {
+                "id": "FR025",
+                "description": "The system shall provide insights into patient traffic.",
+                "priority": "Medium"
+            },
+            {
+                "id": "FR026",
+                "description": "The system shall allow administrators to manage system configurations.",
+                "priority": "High"
+            },
+            {
+                "id": "FR027",
+                "description": "The system shall allow administrators to manage user roles and permissions.",
+                "priority": "High"
+            },
+            {
+                "id": "FR028",
+                "description": "The system shall generate appointment statistics and trends.",
+                "priority": "Medium"
+            },
+            {
+                "id": "FR029",
+                "description": "The system shall provide metrics on doctor performance.",
+                "priority": "Medium"
+            },
+            {
+                "id": "FR030",
+                "description": "The system shall generate patient engagement reports.",
+                "priority": "Medium"
+            },
+            {
+                "id": "FR031",
+                "description": "The system shall allow exporting reports in CSV and PDF formats.",
+                "priority": "Medium"
+            },
+            {
+                "id": "FR032",
+                "description": "The system shall provide an overview of daily appointments for administrators and receptionists.",
+                "priority": "High"
+            }
         ],
-        non_functional_requirements: [
-            { category: "Usability", description: "The system should expand usability and simplify workflows for both patients and doctors." },
-            { category: "Performance", description: "The system should be able to handle increased patient volume efficiently." },
-            { category: "Maintainability", description: "The solution should be adaptable to evolving business needs and operational processes." },
-            { category: "Reliability", description: "The system must ensure data consistency through additional regression and workflow testing." },
-            { category: "Scope", description: "Advanced analytics functionality is out of scope for Phase 1." },
-            { category: "Interoperability", description: "All reports in the initial release must be exportable only in Excel format." }
+        "non_functional_requirements": [
+            {
+                "category": "Security",
+                "description": "The system shall ensure secure handling of all patient data."
+            },
+            {
+                "category": "Availability",
+                "description": "The system shall maintain a high availability of 99.9% uptime."
+            },
+            {
+                "category": "Performance",
+                "description": "The system shall achieve response times of less than 2 seconds for major operations."
+            },
+            {
+                "category": "Security",
+                "description": "The system shall ensure secure data storage and encrypted communication channels."
+            },
+            {
+                "category": "Compliance",
+                "description": "The system shall comply with relevant healthcare data protection standards."
+            },
+            {
+                "category": "Scalability",
+                "description": "The system shall have a scalable architecture capable of supporting multiple hospitals."
+            },
+            {
+                "category": "Usability/Compatibility",
+                "description": "The system shall be compatible across various browsers and devices."
+            },
+            {
+                "category": "Security",
+                "description": "The system shall enforce role-based authorization for all system functions."
+            },
+            {
+                "category": "Security",
+                "description": "The system shall encrypt all passwords and sensitive data at rest and in transit."
+            },
+            {
+                "category": "Security",
+                "description": "The system shall provide secure API access."
+            },
+            {
+                "category": "Security/Auditability",
+                "description": "The system shall maintain audit logs for all critical operations."
+            },
+            {
+                "category": "Security",
+                "description": "The system shall be protected against common security vulnerabilities."
+            }
         ],
-        user_stories: [
-            "As a patient, I want to verify my mobile number with an OTP during registration, so that my account is secure.",
-            "As a patient, I want to register using my mobile number, so that I don't have to use an email-only option.",
-            "As a patient, I want to provide my age and gender during registration, so that my profile is complete.",
-            "As a doctor, I want to log in with simplified hospital-provided credentials, so that I can access the system easily.",
-            "As a patient, I want to book an appointment without creating an account, so that I can quickly schedule a visit.",
-            "As an administrator, I want to configure appointment durations for each doctor, so that scheduling is flexible and accurate.",
-            "As an administrator, I want the system to automatically add buffer time between appointments, so that doctors have preparation time.",
-            "As a patient, I want to be restricted from making multiple bookings on the same day, so that I don't accidentally overbook.",
-            "As a doctor, I want to manage my availability across multiple clinic locations, so that I can serve patients at different sites.",
-            "As a doctor, I want to block specific appointment slots for emergencies, so that I can handle urgent cases.",
-            "As a patient, I want to see a simplified doctor profile without detailed qualifications, so that the interface is cleaner.",
-            "As a patient, I want to receive mandatory SMS notifications for appointment confirmation, so that I am always informed.",
-            "As a patient, I want to have the option to receive email notifications for appointment confirmation, so that I can choose my preferred communication method.",
-            "As a patient, I want to receive appointment reminder notifications 24 hours and 2 hours before my appointment, so that I don't miss it.",
-            "As a hospital administrator, I want to receive a daily appointment summary report, so that I can monitor operations.",
-            "As a hospital administrator, I want to export reports only in Excel format for the initial release, so that I can easily process the data."
+        "user_stories": [
+            "As a patient, I want to register securely, so that I can access the platform and manage my healthcare.",
+            "As a doctor, I want to register securely, so that I can manage my appointments and patient interactions.",
+            "As an administrator, I want to register securely, so that I can manage the system and users.",
+            "As a user, I want to log in using my email or mobile number and password, so that I can access my account.",
+            "As a user, I want to be able to reset my password and recover my account, so that I can regain access if I forget my credentials.",
+            "As a user, I want to enable multi-factor authentication, so that my account has an extra layer of security.",
+            "As a patient, I want to create and manage my profile, so that my basic information is up-to-date for appointments.",
+            "As a patient, I want to view my appointment history, so that I can keep track of my past consultations.",
+            "As a patient, I want to update my contact and personal details, so that healthcare providers can reach me and my information is accurate.",
+            "As a doctor, I want to create and maintain my profile, including specialization and qualifications, so that patients can find me and know my expertise.",
+            "As a doctor, I want to manage my availability schedule, so that patients can book appointments when I am free.",
+            "As a doctor, I want to track my leave and unavailability, so that my schedule accurately reflects when I am not working.",
+            "As a doctor, I want to view an overview of my daily and weekly appointments, so that I can plan my work effectively.",
+            "As a patient, I want to search for doctors by specialization and availability, so that I can find the right doctor at a convenient time.",
+            "As a patient, I want to book appointment slots in real-time, so that I can secure my preferred time immediately.",
+            "As a patient, I want to reschedule or cancel my appointments, so that I have flexibility if my plans change.",
+            "As a receptionist, I want to support walk-in appointments, so that I can efficiently manage unscheduled patient visits.",
+            "As a patient, I want to receive appointment confirmation notifications, so that I know my booking is successful.",
+            "As a patient, I want to receive appointment reminder notifications via SMS and Email, so that I don't miss my appointments.",
+            "As a patient, I want to receive alerts for cancellations and reschedules, so that I am always informed about changes to my appointments.",
+            "As a user, I want to configure my notification preferences, so that I receive alerts in my preferred way.",
+            "As an administrator, I want to manage system configurations, so that the platform operates according to organizational policies.",
+            "As an administrator, I want to manage user roles and permissions, so that access control is properly enforced.",
+            "As an administrator, I want to view doctor utilization metrics, patient traffic insights, appointment statistics, and doctor performance metrics, so that I can identify operational efficiencies and areas for improvement.",
+            "As an administrator, I want to generate patient engagement reports, so that I can understand patient interaction with the platform.",
+            "As an administrator, I want to export reports in CSV/PDF format, so that I can share data with stakeholders or for further analysis.",
+            "As an administrator or receptionist, I want to view an overview of daily appointments, so that I can manage clinic operations efficiently."
         ]
     },
-    architecture: {
-        components: [
-            { name: "API Gateway", type: "Gateway", responsibilities: ["Request routing to appropriate services", "Initial authentication and authorization checks", "Rate limiting and load balancing", "Centralized entry point for all external requests"] },
-            { name: "User Service", type: "Microservice", responsibilities: ["Patient registration (mobile number, age, gender)", "One-Time Password (OTP) generation and verification for mobile numbers", "Patient profile management", "Doctor login using simplified hospital-provided credentials", "Doctor profile management (including simplified views for patients)"] },
-            { name: "Appointment Service", type: "Microservice", responsibilities: ["Appointment booking for registered patients and guests", "Managing doctor availability across multiple clinic locations", "Restricting patients from making multiple bookings on the same day", "Blocking specific appointment slots for emergencies", "Applying configurable buffer times between appointments", "Handling appointment status updates (e.g., confirmed, cancelled)"] },
-            { name: "Clinic & Doctor Configuration Service", type: "Microservice", responsibilities: ["Managing clinic locations", "Configuring doctor-specific settings (e.g., default appointment duration, buffer time)"] },
-            { name: "Notification Service", type: "Microservice", responsibilities: ["Sending mandatory SMS notifications for appointment confirmation", "Sending optional email notifications for appointment confirmation", "Scheduling and sending appointment reminder notifications (24 hours and 2 hours prior)", "Sending daily appointment summary reports to hospital administrators", "Integrating with external SMS and Email providers"] },
-            { name: "Reporting Service", type: "Microservice", responsibilities: ["Generating daily appointment summary reports", "Exporting reports exclusively in Excel format"] },
-            { name: "Database", type: "Data Store", responsibilities: ["Persistent storage for all application data (patients, doctors, appointments, OTPs, clinic configurations, etc.)", "Ensuring data consistency and reliability"] },
-            { name: "Message Broker", type: "Messaging System", responsibilities: ["Enabling asynchronous communication between services (e.g., appointment booking events, notification triggers)", "Decoupling services for improved scalability and reliability"] }
+    "architecture": {
+        "components": [
+            {
+                "name": "AuthService",
+                "type": "Microservice",
+                "responsibilities": [
+                    "User registration (Patient, Doctor, Staff) [FR001]",
+                    "User login (email/mobile & password) [FR002]",
+                    "Password reset and account recovery [FR004]",
+                    "Multi-factor authentication (MFA) management [FR005]",
+                    "Token generation and validation (JWT)",
+                    "Session management",
+                    "Secure password storage and encryption [Security]"
+                ]
+            },
+            {
+                "name": "UserService",
+                "type": "Microservice",
+                "responsibilities": [
+                    "Manage user roles (Patient, Doctor, Admin, Receptionist) [FR003, FR027]",
+                    "Manage user permissions (Role-Based Access Control) [FR003, Security]",
+                    "Link user authentication to profile data",
+                    "Provide user details to other services"
+                ]
+            },
+            {
+                "name": "ProfileService",
+                "type": "Microservice",
+                "responsibilities": [
+                    "Patient profile creation and management (demographics, contact) [FR006, FR007, FR009]",
+                    "Doctor profile creation and management (specialization, qualifications) [FR010, FR011]",
+                    "Provide profile data to other services",
+                    "Ensure secure handling of patient data [Security]"
+                ]
+            },
+            {
+                "name": "SchedulingService",
+                "type": "Microservice",
+                "responsibilities": [
+                    "Doctor availability schedule management (create, update, delete slots) [FR012, FR013]",
+                    "Search for doctors by specialization and availability [FR015]",
+                    "Real-time appointment booking [FR016]",
+                    "Appointment rescheduling and cancellation [FR017]",
+                    "Prevent double-booking of appointment slots [FR018]",
+                    "Manage walk-in appointments (for receptionists) [FR019]",
+                    "Provide patient appointment history [FR008]",
+                    "Provide daily/weekly appointment overview for doctors [FR014]",
+                    "Provide daily appointment overview for administrators and receptionists [FR032]",
+                    "Publish appointment events (booked, cancelled, rescheduled) to Message Broker"
+                ]
+            },
+            {
+                "name": "NotificationService",
+                "type": "Microservice",
+                "responsibilities": [
+                    "Send appointment confirmation notifications (Email, SMS) [FR020]",
+                    "Send appointment reminder notifications (Email, SMS) [FR021]",
+                    "Send alerts for appointment cancellations and reschedules (Email, SMS) [FR022]",
+                    "Manage user notification preferences [FR023]",
+                    "Integrate with external SMS/Email providers",
+                    "Consume appointment events from Message Broker"
+                ]
+            },
+            {
+                "name": "ReportingService",
+                "type": "Microservice",
+                "responsibilities": [
+                    "Collect and aggregate data from other services for reporting",
+                    "Generate metrics on doctor utilization [FR024]",
+                    "Provide insights into patient traffic [FR025]",
+                    "Generate appointment statistics and trends [FR028]",
+                    "Provide metrics on doctor performance [FR029]",
+                    "Generate patient engagement reports [FR030]",
+                    "Export reports in CSV and PDF formats [FR031]",
+                    "Consume relevant events/data from Message Broker and other services"
+                ]
+            },
+            {
+                "name": "AdminService",
+                "type": "Microservice",
+                "responsibilities": [
+                    "Manage system configurations [FR026]",
+                    "Provide administrative dashboards and overviews",
+                    "Interface with UserService for user role/permission management [FR027]"
+                ]
+            },
+            {
+                "name": "APIGateway",
+                "type": "Infrastructure",
+                "responsibilities": [
+                    "Route requests to appropriate microservices",
+                    "Handle authentication and authorization (pre-processing) [Security]",
+                    "Load balancing and rate limiting",
+                    "SSL termination for encrypted communication [Security]",
+                    "Provide secure API access [Security]"
+                ]
+            },
+            {
+                "name": "Database (PostgreSQL)",
+                "type": "Data Store",
+                "responsibilities": [
+                    "Persistent storage for all application data",
+                    "Ensure data integrity and consistency",
+                    "Support high availability and scalability [Availability, Scalability]",
+                    "Encrypt sensitive data at rest [Security]"
+                ]
+            },
+            {
+                "name": "MessageBroker (Kafka/RabbitMQ)",
+                "type": "Infrastructure",
+                "responsibilities": [
+                    "Enable asynchronous communication between microservices",
+                    "Decouple services for scalability and resilience [Scalability]",
+                    "Facilitate event-driven architecture (e.g., for notifications, reporting)"
+                ]
+            },
+            {
+                "name": "AuditLogService",
+                "type": "Microservice",
+                "responsibilities": [
+                    "Maintain audit logs for all critical operations [Security/Auditability]",
+                    "Consume audit events from other services via Message Broker"
+                ]
+            }
         ],
-        data_models: [
-            { name: "Patient", fields: ["id (UUID)", "mobileNumber (string, unique, required)", "otpVerified (boolean)", "age (integer, required)", "gender (string, required)", "email (string, optional)", "registrationDate (datetime)"] },
-            { name: "Doctor", fields: ["id (UUID)", "hospitalId (string, unique, required, for login)", "name (string)", "specialty (string)", "clinicLocationIds (array of UUIDs)", "defaultAppointmentDurationMinutes (integer)", "bufferTimeMinutes (integer)"] },
-            { name: "ClinicLocation", fields: ["id (UUID)", "name (string)", "address (string)"] },
-            { name: "Appointment", fields: ["id (UUID)", "patientId (UUID, nullable, links to Patient)", "guestInfo (object: name, mobileNumber, email - if patientId is null)", "doctorId (UUID, links to Doctor)", "clinicLocationId (UUID, links to ClinicLocation)", "startTime (datetime)", "endTime (datetime)", "durationMinutes (integer)", "bufferTimeMinutes (integer)", "status (enum: 'booked', 'confirmed', 'cancelled', 'completed')", "smsConfirmed (boolean)", "emailConfirmed (boolean)", "bookedDate (datetime)"] },
-            { name: "OTP", fields: ["id (UUID)", "mobileNumber (string)", "code (string)", "expiresAt (datetime)", "isUsed (boolean)"] },
-            { name: "DoctorAvailability", fields: ["id (UUID)", "doctorId (UUID)", "clinicLocationId (UUID)", "date (date)", "availableSlots (array of time ranges)", "blockedSlots (array of time ranges, for emergencies)"] },
-            { name: "DailyReport", fields: ["id (UUID)", "reportDate (date)", "generatedAt (datetime)", "filePath (string, URL to Excel file)"] }
+        "data_models": [
+            {
+                "name": "User",
+                "fields": [
+                    "id: UUID (Primary Key)",
+                    "email: String (Unique)",
+                    "mobileNumber: String (Unique, Optional)",
+                    "passwordHash: String (Hashed password)",
+                    "roleId: UUID (Foreign Key to Role)",
+                    "mfaEnabled: Boolean (Default: false)",
+                    "status: String (e.g., 'active', 'pending', 'inactive')",
+                    "createdAt: DateTime",
+                    "updatedAt: DateTime"
+                ]
+            },
+            {
+                "name": "Role",
+                "fields": [
+                    "id: UUID (Primary Key)",
+                    "name: String (Unique, e.g., 'Patient', 'Doctor', 'Admin', 'Receptionist')",
+                    "description: String"
+                ]
+            },
+            {
+                "name": "PatientProfile",
+                "fields": [
+                    "id: UUID (Primary Key)",
+                    "userId: UUID (Foreign Key to User, Unique)",
+                    "firstName: String",
+                    "lastName: String",
+                    "dateOfBirth: Date",
+                    "gender: String",
+                    "address: String",
+                    "contactNumber: String",
+                    "emergencyContactName: String",
+                    "emergencyContactNumber: String",
+                    "createdAt: DateTime",
+                    "updatedAt: DateTime"
+                ]
+            },
+            {
+                "name": "DoctorProfile",
+                "fields": [
+                    "id: UUID (Primary Key)",
+                    "userId: UUID (Foreign Key to User, Unique)",
+                    "firstName: String",
+                    "lastName: String",
+                    "specialization: String",
+                    "qualifications: Array<String>",
+                    "experienceYears: Integer",
+                    "clinicAddress: String",
+                    "contactNumber: String",
+                    "createdAt: DateTime",
+                    "updatedAt: DateTime"
+                ]
+            },
+            {
+                "name": "AvailabilitySlot",
+                "fields": [
+                    "id: UUID (Primary Key)",
+                    "doctorId: UUID (Foreign Key to DoctorProfile)",
+                    "startTime: DateTime",
+                    "endTime: DateTime",
+                    "status: String (e.g., 'available', 'booked', 'blocked', 'leave')",
+                    "appointmentId: UUID (Foreign Key to Appointment, Nullable if not booked)",
+                    "createdAt: DateTime",
+                    "updatedAt: DateTime"
+                ]
+            },
+            {
+                "name": "Appointment",
+                "fields": [
+                    "id: UUID (Primary Key)",
+                    "patientId: UUID (Foreign Key to PatientProfile)",
+                    "doctorId: UUID (Foreign Key to DoctorProfile)",
+                    "slotId: UUID (Foreign Key to AvailabilitySlot, Unique)",
+                    "appointmentTime: DateTime (Redundant but useful for quick access)",
+                    "status: String (e.g., 'booked', 'completed', 'cancelled', 'rescheduled', 'no-show')",
+                    "reason: String (Optional)",
+                    "bookingDate: DateTime",
+                    "createdAt: DateTime",
+                    "updatedAt: DateTime"
+                ]
+            },
+            {
+                "name": "NotificationPreference",
+                "fields": [
+                    "id: UUID (Primary Key)",
+                    "userId: UUID (Foreign Key to User)",
+                    "type: String (e.g., 'email', 'sms')",
+                    "enabled: Boolean",
+                    "frequency: String (e.g., 'instant', 'daily', 'weekly')",
+                    "createdAt: DateTime",
+                    "updatedAt: DateTime"
+                ]
+            },
+            {
+                "name": "SystemConfiguration",
+                "fields": [
+                    "id: UUID (Primary Key)",
+                    "key: String (Unique)",
+                    "value: String",
+                    "description: String",
+                    "lastUpdatedBy: UUID (Foreign Key to User)",
+                    "updatedAt: DateTime"
+                ]
+            },
+            {
+                "name": "AuditLog",
+                "fields": [
+                    "id: UUID (Primary Key)",
+                    "userId: UUID (Foreign Key to User, Nullable)",
+                    "action: String",
+                    "entityType: String",
+                    "entityId: UUID (Nullable)",
+                    "timestamp: DateTime",
+                    "details: JSONB (e.g., old_value, new_value, IP address)"
+                ]
+            }
         ],
-        api_definitions: [
-            { method: "POST", path: "/patients/register", description: "Registers a new patient, requiring mobile number, age, and gender. Triggers OTP sending for mobile verification." },
-            { method: "POST", path: "/patients/verify-otp", description: "Verifies the One-Time Password (OTP) sent to the patient's mobile number." },
-            { method: "POST", path: "/doctors/login", description: "Authenticates a doctor using simplified hospital-provided credentials." },
-            { method: "GET", path: "/patients/{patientId}", description: "Retrieves a patient's profile details." },
-            { method: "GET", path: "/doctors/{doctorId}/profile", description: "Retrieves a simplified doctor's profile for patient-facing screens (excluding detailed qualifications)." },
-            { method: "GET", path: "/doctors/{doctorId}/availability", description: "Retrieves a doctor's available and blocked appointment slots for a specified date range and clinic location." },
-            { method: "POST", path: "/appointments", description: "Books a new appointment for a registered patient or a guest. Enforces same-day booking restrictions and applies buffer times." },
-            { method: "PUT", path: "/appointments/{appointmentId}/cancel", description: "Cancels an existing appointment." },
-            { method: "GET", path: "/patients/{patientId}/appointments", description: "Retrieves all appointments associated with a specific patient." },
-            { method: "GET", path: "/doctors/{doctorId}/appointments", description: "Retrieves all appointments scheduled with a specific doctor." },
-            { method: "PUT", path: "/doctors/{doctorId}/availability", description: "Updates a doctor's availability, including blocking specific slots for emergencies across multiple clinic locations." },
-            { method: "PUT", path: "/doctors/{doctorId}/configuration", description: "Configures a doctor's default appointment duration and automatic buffer time between appointments." },
-            { method: "GET", path: "/clinics", description: "Retrieves a list of all available clinic locations." },
-            { method: "GET", path: "/reports/daily-summary", description: "Generates and provides a daily appointment summary report in Excel format for hospital administrators." }
+        "api_definitions": [
+            {
+                "method": "POST",
+                "path": "/auth/register",
+                "description": "Register a new user account (Patient, Doctor, Staff) [FR001]."
+            },
+            {
+                "method": "POST",
+                "path": "/auth/login",
+                "description": "Authenticate user and issue access token [FR002]."
+            },
+            {
+                "method": "POST",
+                "path": "/auth/password-reset-request",
+                "description": "Request a password reset link/code [FR004]."
+            },
+            {
+                "method": "POST",
+                "path": "/auth/password-reset",
+                "description": "Reset user password using a token/code [FR004]."
+            },
+            {
+                "method": "POST",
+                "path": "/auth/mfa/enable",
+                "description": "Enable multi-factor authentication for a user [FR005]."
+            },
+            {
+                "method": "POST",
+                "path": "/auth/mfa/verify",
+                "description": "Verify MFA code during login [FR005]."
+            },
+            {
+                "method": "GET",
+                "path": "/users/{userId}/roles",
+                "description": "Get roles assigned to a specific user (Admin only) [FR003]."
+            },
+            {
+                "method": "PUT",
+                "path": "/users/{userId}/roles",
+                "description": "Update roles for a specific user (Admin only) [FR027]."
+            },
+            {
+                "method": "GET",
+                "path": "/patients/profile",
+                "description": "Get the authenticated patient's profile [FR006]."
+            },
+            {
+                "method": "POST",
+                "path": "/patients/profile",
+                "description": "Create the authenticated patient's profile [FR006, FR007]."
+            },
+            {
+                "method": "PUT",
+                "path": "/patients/profile",
+                "description": "Update the authenticated patient's profile (contact, personal details) [FR009]."
+            },
+            {
+                "method": "GET",
+                "path": "/doctors/profile",
+                "description": "Get the authenticated doctor's profile [FR010]."
+            },
+            {
+                "method": "POST",
+                "path": "/doctors/profile",
+                "description": "Create the authenticated doctor's profile [FR010, FR011]."
+            },
+            {
+                "method": "PUT",
+                "path": "/doctors/profile",
+                "description": "Update the authenticated doctor's profile (specialization, qualifications) [FR010, FR011]."
+            },
+            {
+                "method": "GET",
+                "path": "/doctors/{doctorId}/availability",
+                "description": "Get a doctor's availability schedule [FR012]."
+            },
+            {
+                "method": "POST",
+                "path": "/doctors/{doctorId}/availability",
+                "description": "Add new availability slots for a doctor [FR012]."
+            },
+            {
+                "method": "PUT",
+                "path": "/doctors/{doctorId}/availability/{slotId}",
+                "description": "Update an existing availability slot (e.g., block, unblock, mark as leave) [FR012, FR013]."
+            },
+            {
+                "method": "GET",
+                "path": "/doctors/search",
+                "description": "Search for doctors by specialization and availability [FR015]."
+            },
+            {
+                "method": "GET",
+                "path": "/appointments/history",
+                "description": "Get the authenticated patient's appointment history [FR008]."
+            },
+            {
+                "method": "GET",
+                "path": "/appointments/doctor/{doctorId}/daily",
+                "description": "Get a doctor's daily appointment overview [FR014]."
+            },
+            {
+                "method": "GET",
+                "path": "/appointments/doctor/{doctorId}/weekly",
+                "description": "Get a doctor's weekly appointment overview [FR014]."
+            },
+            {
+                "method": "POST",
+                "path": "/appointments",
+                "description": "Book a new appointment [FR016, FR018]."
+            },
+            {
+                "method": "PUT",
+                "path": "/appointments/{appointmentId}/reschedule",
+                "description": "Reschedule an existing appointment [FR017]."
+            },
+            {
+                "method": "PUT",
+                "path": "/appointments/{appointmentId}/cancel",
+                "description": "Cancel an existing appointment [FR017]."
+            },
+            {
+                "method": "POST",
+                "path": "/appointments/walk-in",
+                "description": "Create a walk-in appointment (Receptionist only) [FR019]."
+            },
+            {
+                "method": "GET",
+                "path": "/notifications/preferences",
+                "description": "Get authenticated user's notification preferences [FR023]."
+            },
+            {
+                "method": "PUT",
+                "path": "/notifications/preferences",
+                "description": "Update authenticated user's notification preferences [FR023]."
+            },
+            {
+                "method": "GET",
+                "path": "/admin/configurations",
+                "description": "Get all system configurations (Admin only) [FR026]."
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/configurations/{key}",
+                "description": "Update a specific system configuration (Admin only) [FR026]."
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/doctor-utilization",
+                "description": "Get doctor utilization metrics (Admin only) [FR024]."
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/patient-traffic",
+                "description": "Get patient traffic insights (Admin only) [FR025]."
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/appointment-statistics",
+                "description": "Get appointment statistics and trends (Admin only) [FR028]."
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/doctor-performance",
+                "description": "Get doctor performance metrics (Admin only) [FR029]."
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/patient-engagement",
+                "description": "Get patient engagement reports (Admin only) [FR030]."
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/{reportType}/export",
+                "description": "Export a specific report in CSV/PDF format (Admin only) [FR031]."
+            },
+            {
+                "method": "GET",
+                "path": "/admin/appointments/daily",
+                "description": "Get an overview of all daily appointments for administrators/receptionists [FR032]."
+            }
         ],
-        diagram_mermaid: "graph TD\n    A[Patient/Doctor Frontend] --> B(API Gateway)\n    B --> C(User Service)\n    B --> D(Appointment Service)\n    B --> E(Clinic & Doctor Config Service)\n    B --> F(Reporting Service)\n\n    C --> G(Database)\n    D --> G\n    E --> G\n    F --> G\n\n    D -- \"Appointment Booked/Cancelled Event\" --> H(Message Broker)\n    H --> I(Notification Service)\n    H -- \"Daily Report Trigger\" --> F\n\n    I --> J(SMS Provider)\n    I --> K(Email Provider)\n\n    subgraph Backend Services\n        C\n        D\n        E\n        F\n        I\n    end\n\n    subgraph Data Stores\n        G\n        H\n    end"
+        "diagram_mermaid": "graph TD\n    A[Client Applications] --> B(API Gateway)\n\n    B --> C(AuthService)\n    B --> D(UserService)\n    B --> E(ProfileService)\n    B --> F(SchedulingService)\n    B --> G(AdminService)\n    B --> H(ReportingService)\n\n    C -- Authenticates/Authorizes --> D\n    D -- Manages Roles/Permissions --> C\n    D -- Provides User Info --> E\n    D -- Provides User Info --> F\n    D -- Provides User Info --> G\n\n    E -- Manages Patient/Doctor Profiles --> DB[Database]\n    F -- Manages Appointments/Availability --> DB\n    C -- Stores User Credentials --> DB\n    D -- Stores User Roles --> DB\n    G -- Stores System Config --> DB\n    H -- Reads Data --> DB\n    I(AuditLogService) -- Stores Audit Logs --> DB\n\n    F -- Publishes Events (Appointment Booked/Cancelled) --> M(Message Broker)\n    M --> N(NotificationService)\n    M --> H\n    M --> I\n\n    N -- Sends Email/SMS --> O[External Notification Providers]\n\n    subgraph Data Stores\n        DB\n    end\n\n    subgraph Infrastructure\n        B\n        M\n        O\n    end\n\n    subgraph Microservices\n        C\n        D\n        E\n        F\n        G\n        H\n        N\n        I\n    end"
     },
-    impact: {
-        affected_components: ["API Gateway", "User Service", "Appointment Service", "Clinic & Doctor Configuration Service", "Notification Service", "Reporting Service", "Database", "Message Broker"],
-        file_changes: [
-            { path: "api-gateway/gateway-config.yaml", change_type: "CREATE", reason: "Define request routing, authentication, authorization, rate limiting, and load balancing rules for all microservices." },
-            { path: "api-gateway/auth-middleware.js", change_type: "CREATE", reason: "Implement initial authentication and authorization checks at the gateway level." },
-            { path: "user-service/src/main/java/com/example/userservice/model/Patient.java", change_type: "CREATE", reason: "Define the Patient data model." },
-            { path: "user-service/src/main/java/com/example/userservice/model/Doctor.java", change_type: "CREATE", reason: "Define the Doctor data model (for login and basic profile)." },
-            { path: "user-service/src/main/java/com/example/userservice/model/OTP.java", change_type: "CREATE", reason: "Define the OTP data model for mobile verification." },
-            { path: "user-service/src/main/java/com/example/userservice/repository/PatientRepository.java", change_type: "CREATE", reason: "Data access interface for Patient entities." },
-            { path: "user-service/src/main/java/com/example/userservice/repository/DoctorRepository.java", change_type: "CREATE", reason: "Data access interface for Doctor entities." },
-            { path: "user-service/src/main/java/com/example/userservice/repository/OTPRepository.java", change_type: "CREATE", reason: "Data access interface for OTP entities." },
-            { path: "user-service/src/main/java/com/example/userservice/service/PatientService.java", change_type: "CREATE", reason: "Business logic for patient registration, OTP generation/verification, and profile management." },
-            { path: "user-service/src/main/java/com/example/userservice/service/DoctorService.java", change_type: "CREATE", reason: "Business logic for doctor login and profile retrieval." },
-            { path: "user-service/src/main/java/com/example/userservice/controller/PatientController.java", change_type: "CREATE", reason: "REST endpoints for patient registration, OTP verification, and profile retrieval." },
-            { path: "user-service/src/main/java/com/example/userservice/controller/DoctorController.java", change_type: "CREATE", reason: "REST endpoints for doctor login and simplified profile retrieval." },
-            { path: "user-service/src/main/java/com/example/userservice/event/UserEventPublisher.java", change_type: "CREATE", reason: "Publish events related to user registration (e.g., for notification service)." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/model/Appointment.java", change_type: "CREATE", reason: "Define the Appointment data model." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/model/DoctorAvailability.java", change_type: "CREATE", reason: "Define the DoctorAvailability data model." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/repository/AppointmentRepository.java", change_type: "CREATE", reason: "Data access interface for Appointment entities." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/repository/DoctorAvailabilityRepository.java", change_type: "CREATE", reason: "Data access interface for DoctorAvailability entities." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/service/AppointmentBookingService.java", change_type: "CREATE", reason: "Business logic for appointment booking, cancellation, restrictions, and buffer times." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/service/DoctorAvailabilityService.java", change_type: "CREATE", reason: "Business logic for managing doctor availability and blocking slots." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/controller/AppointmentController.java", change_type: "CREATE", reason: "REST endpoints for booking, cancelling, and retrieving appointments." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/controller/DoctorAvailabilityController.java", change_type: "CREATE", reason: "REST endpoint for retrieving and updating doctor availability." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/event/AppointmentEventPublisher.java", change_type: "CREATE", reason: "Publish events related to appointment booking/cancellation (e.g., for notification and reporting services)." },
-            { path: "appointment-service/src/main/java/com/example/appointmentservice/event/DoctorConfigEventListener.java", change_type: "CREATE", reason: "Consume events for doctor configuration updates from Clinic & Doctor Configuration Service." },
-            { path: "clinic-config-service/src/main/java/com/example/clinicconfigservice/model/ClinicLocation.java", change_type: "CREATE", reason: "Define the ClinicLocation data model." },
-            { path: "clinic-config-service/src/main/java/com/example/clinicconfigservice/model/DoctorConfig.java", change_type: "CREATE", reason: "Define the Doctor configuration data model (e.g., default duration, buffer time)." },
-            { path: "clinic-config-service/src/main/java/com/example/clinicconfigservice/repository/ClinicLocationRepository.java", change_type: "CREATE", reason: "Data access interface for ClinicLocation entities." },
-            { path: "clinic-config-service/src/main/java/com/example/clinicconfigservice/repository/DoctorConfigRepository.java", change_type: "CREATE", reason: "Data access interface for Doctor configuration entities." },
-            { path: "clinic-config-service/src/main/java/com/example/clinicconfigservice/service/ClinicService.java", change_type: "CREATE", reason: "Business logic for managing clinic locations." },
-            { path: "clinic-config-service/src/main/java/com/example/clinicconfigservice/service/DoctorConfigurationService.java", change_type: "CREATE", reason: "Business logic for configuring doctor-specific settings." },
-            { path: "clinic-config-service/src/main/java/com/example/clinicconfigservice/controller/ClinicController.java", change_type: "CREATE", reason: "REST endpoint for retrieving clinic locations." },
-            { path: "clinic-config-service/src/main/java/com/example/clinicconfigservice/controller/DoctorConfigurationController.java", change_type: "CREATE", reason: "REST endpoint for configuring doctor settings." },
-            { path: "clinic-config-service/src/main/java/com/example/clinicconfigservice/event/DoctorConfigEventPublisher.java", change_type: "CREATE", reason: "Publish events for doctor configuration updates (e.g., to Appointment Service)." },
-            { path: "notification-service/src/main/java/com/example/notificationservice/service/SmsService.java", change_type: "CREATE", reason: "Service for integrating with external SMS providers and sending notifications." },
-            { path: "notification-service/src/main/java/com/example/notificationservice/service/EmailService.java", change_type: "CREATE", reason: "Service for integrating with external Email providers and sending notifications." },
-            { path: "notification-service/src/main/java/com/example/notificationservice/service/NotificationScheduler.java", change_type: "CREATE", reason: "Scheduler for sending appointment reminders and daily summary reports." },
-            { path: "notification-service/src/main/java/com/example/notificationservice/event/UserRegistrationEventListener.java", change_type: "CREATE", reason: "Consume user registration events to trigger welcome/OTP notifications." },
-            { path: "notification-service/src/main/java/com/example/notificationservice/event/AppointmentEventListener.java", change_type: "CREATE", reason: "Consume appointment events to trigger confirmation, cancellation, and reminder notifications." },
-            { path: "reporting-service/src/main/java/com/example/reportingservice/model/DailyReport.java", change_type: "CREATE", reason: "Define the DailyReport data model." },
-            { path: "reporting-service/src/main/java/com/example/reportingservice/repository/DailyReportRepository.java", change_type: "CREATE", reason: "Data access interface for DailyReport entities." },
-            { path: "reporting-service/src/main/java/com/example/reportingservice/service/ReportGenerationService.java", change_type: "CREATE", reason: "Business logic for generating daily appointment summary reports in Excel format." },
-            { path: "reporting-service/src/main/java/com/example/reportingservice/controller/ReportController.java", change_type: "CREATE", reason: "REST endpoint for generating and retrieving daily summary reports." },
-            { path: "reporting-service/src/main/java/com/example/reportingservice/event/AppointmentEventListener.java", change_type: "CREATE", reason: "Consume appointment events to gather data for report generation." },
-            { path: "reporting-service/src/main/java/com/example/reportingservice/scheduler/DailyReportScheduler.java", change_type: "CREATE", reason: "Scheduler to trigger daily report generation." },
-            { path: "message-broker/config/topics.yaml", change_type: "CREATE", reason: "Define topics/queues for inter-service communication (e.g., user-registration-events, appointment-events, doctor-config-events)." }
+    "impact": {
+        "affected_components": [
+            "AuthService",
+            "UserService",
+            "ProfileService",
+            "SchedulingService",
+            "NotificationService",
+            "ReportingService",
+            "AdminService",
+            "APIGateway",
+            "Database (PostgreSQL)",
+            "MessageBroker (Kafka/RabbitMQ)",
+            "AuditLogService"
         ],
-        database_migrations: [
-            "CREATE TABLE Patient (id UUID PRIMARY KEY, mobileNumber VARCHAR(20) UNIQUE NOT NULL, otpVerified BOOLEAN NOT NULL, age INTEGER NOT NULL, gender VARCHAR(10) NOT NULL, email VARCHAR(255), registrationDate TIMESTAMP NOT NULL)",
-            "CREATE TABLE Doctor (id UUID PRIMARY KEY, hospitalId VARCHAR(50) UNIQUE NOT NULL, name VARCHAR(255) NOT NULL, specialty VARCHAR(255), defaultAppointmentDurationMinutes INTEGER, bufferTimeMinutes INTEGER)",
-            "CREATE TABLE ClinicLocation (id UUID PRIMARY KEY, name VARCHAR(255) NOT NULL, address TEXT)",
-            "CREATE TABLE DoctorClinicLocation (doctorId UUID NOT NULL, clinicLocationId UUID NOT NULL, PRIMARY KEY (doctorId, clinicLocationId), FOREIGN KEY (doctorId) REFERENCES Doctor(id), FOREIGN KEY (clinicLocationId) REFERENCES ClinicLocation(id))",
-            "CREATE TABLE Appointment (id UUID PRIMARY KEY, patientId UUID, guestInfo JSONB, doctorId UUID NOT NULL, clinicLocationId UUID NOT NULL, startTime TIMESTAMP NOT NULL, endTime TIMESTAMP NOT NULL, durationMinutes INTEGER NOT NULL, bufferTimeMinutes INTEGER NOT NULL, status VARCHAR(50) NOT NULL, smsConfirmed BOOLEAN NOT NULL, emailConfirmed BOOLEAN NOT NULL, bookedDate TIMESTAMP NOT NULL, FOREIGN KEY (patientId) REFERENCES Patient(id), FOREIGN KEY (doctorId) REFERENCES Doctor(id), FOREIGN KEY (clinicLocationId) REFERENCES ClinicLocation(id))",
-            "CREATE TABLE OTP (id UUID PRIMARY KEY, mobileNumber VARCHAR(20) NOT NULL, code VARCHAR(10) NOT NULL, expiresAt TIMESTAMP NOT NULL, isUsed BOOLEAN NOT NULL)",
-            "CREATE TABLE DoctorAvailability (id UUID PRIMARY KEY, doctorId UUID NOT NULL, clinicLocationId UUID NOT NULL, date DATE NOT NULL, availableSlots JSONB, blockedSlots JSONB, FOREIGN KEY (doctorId) REFERENCES Doctor(id), FOREIGN KEY (clinicLocationId) REFERENCES ClinicLocation(id))",
-            "CREATE TABLE DailyReport (id UUID PRIMARY KEY, reportDate DATE UNIQUE NOT NULL, generatedAt TIMESTAMP NOT NULL, filePath TEXT NOT NULL)",
-            "CREATE INDEX idx_patient_mobileNumber ON Patient(mobileNumber)",
-            "CREATE INDEX idx_doctor_hospitalId ON Doctor(hospitalId)",
-            "CREATE INDEX idx_appointment_patientId ON Appointment(patientId)",
-            "CREATE INDEX idx_appointment_doctorId ON Appointment(doctorId)",
-            "CREATE INDEX idx_appointment_clinicLocationId ON Appointment(clinicLocationId)",
-            "CREATE INDEX idx_otp_mobileNumber ON OTP(mobileNumber)",
-            "CREATE INDEX idx_doctoravailability_doctor_clinic_date ON DoctorAvailability(doctorId, clinicLocationId, date)"
+        "file_changes": [
+            {
+                "path": "auth-service/src/main/java/com/example/auth/controller/AuthController.java",
+                "change_type": "CREATE",
+                "reason": "Implement API endpoints for user registration, login, password reset, and MFA."
+            },
+            {
+                "path": "auth-service/src/main/java/com/example/auth/service/AuthService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for user authentication, password management, and MFA."
+            },
+            {
+                "path": "auth-service/src/main/java/com/example/auth/repository/UserRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for User entity."
+            },
+            {
+                "path": "auth-service/src/main/java/com/example/auth/model/User.java",
+                "change_type": "CREATE",
+                "reason": "Define User data model."
+            },
+            {
+                "path": "auth-service/src/main/java/com/example/auth/security/JwtTokenProvider.java",
+                "change_type": "CREATE",
+                "reason": "Utility for generating and validating JWT tokens."
+            },
+            {
+                "path": "auth-service/src/main/java/com/example/auth/security/MfaService.java",
+                "change_type": "CREATE",
+                "reason": "Logic for multi-factor authentication management."
+            },
+            {
+                "path": "auth-service/src/main/java/com/example/auth/config/SecurityConfig.java",
+                "change_type": "CREATE",
+                "reason": "Configure Spring Security for authentication and authorization."
+            },
+            {
+                "path": "auth-service/src/main/java/com/example/auth/event/UserEventPublisher.java",
+                "change_type": "CREATE",
+                "reason": "Publish user-related events (e.g., registration, login) to Message Broker for audit/other services."
+            },
+            {
+                "path": "user-service/src/main/java/com/example/user/controller/UserController.java",
+                "change_type": "CREATE",
+                "reason": "Implement API endpoints for managing user roles and permissions."
+            },
+            {
+                "path": "user-service/src/main/java/com/example/user/service/UserService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for user roles, permissions, and linking authentication to profile data."
+            },
+            {
+                "path": "user-service/src/main/java/com/example/user/repository/RoleRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for Role entity."
+            },
+            {
+                "path": "user-service/src/main/java/com/example/user/model/Role.java",
+                "change_type": "CREATE",
+                "reason": "Define Role data model."
+            },
+            {
+                "path": "user-service/src/main/java/com/example/user/security/RbacService.java",
+                "change_type": "CREATE",
+                "reason": "Logic for Role-Based Access Control."
+            },
+            {
+                "path": "user-service/src/main/java/com/example/user/event/UserRoleEventPublisher.java",
+                "change_type": "CREATE",
+                "reason": "Publish user role changes to Message Broker for audit/other services."
+            },
+            {
+                "path": "profile-service/src/main/java/com/example/profile/controller/PatientProfileController.java",
+                "change_type": "CREATE",
+                "reason": "Implement API endpoints for patient profile creation and management."
+            },
+            {
+                "path": "profile-service/src/main/java/com/example/profile/controller/DoctorProfileController.java",
+                "change_type": "CREATE",
+                "reason": "Implement API endpoints for doctor profile creation and management."
+            },
+            {
+                "path": "profile-service/src/main/java/com/example/profile/service/PatientProfileService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for patient profiles."
+            },
+            {
+                "path": "profile-service/src/main/java/com/example/profile/service/DoctorProfileService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for doctor profiles."
+            },
+            {
+                "path": "profile-service/src/main/java/com/example/profile/repository/PatientProfileRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for PatientProfile entity."
+            },
+            {
+                "path": "profile-service/src/main/java/com/example/profile/repository/DoctorProfileRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for DoctorProfile entity."
+            },
+            {
+                "path": "profile-service/src/main/java/com/example/profile/model/PatientProfile.java",
+                "change_type": "CREATE",
+                "reason": "Define PatientProfile data model."
+            },
+            {
+                "path": "profile-service/src/main/java/com/example/profile/model/DoctorProfile.java",
+                "change_type": "CREATE",
+                "reason": "Define DoctorProfile data model."
+            },
+            {
+                "path": "profile-service/src/main/java/com/example/profile/event/ProfileEventPublisher.java",
+                "change_type": "CREATE",
+                "reason": "Publish profile changes to Message Broker for audit/reporting."
+            },
+            {
+                "path": "scheduling-service/src/main/java/com/example/scheduling/controller/DoctorAvailabilityController.java",
+                "change_type": "CREATE",
+                "reason": "Implement API endpoints for managing doctor availability."
+            },
+            {
+                "path": "scheduling-service/src/main/java/com/example/scheduling/controller/AppointmentController.java",
+                "change_type": "CREATE",
+                "reason": "Implement API endpoints for appointment booking, rescheduling, and cancellation."
+            },
+            {
+                "path": "scheduling-service/src/main/java/com/example/scheduling/service/AvailabilityService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for doctor availability slots."
+            },
+            {
+                "path": "scheduling-service/src/main/java/com/example/scheduling/service/AppointmentService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for appointment management, including double-booking prevention."
+            },
+            {
+                "path": "scheduling-service/src/main/java/com/example/scheduling/repository/AvailabilitySlotRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for AvailabilitySlot entity."
+            },
+            {
+                "path": "scheduling-service/src/main/java/com/example/scheduling/repository/AppointmentRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for Appointment entity."
+            },
+            {
+                "path": "scheduling-service/src/main/java/com/example/scheduling/model/AvailabilitySlot.java",
+                "change_type": "CREATE",
+                "reason": "Define AvailabilitySlot data model."
+            },
+            {
+                "path": "scheduling-service/src/main/java/com/example/scheduling/model/Appointment.java",
+                "change_type": "CREATE",
+                "reason": "Define Appointment data model."
+            },
+            {
+                "path": "scheduling-service/src/main/java/com/example/scheduling/event/AppointmentEventPublisher.java",
+                "change_type": "CREATE",
+                "reason": "Publish appointment events (booked, cancelled, rescheduled) to Message Broker."
+            },
+            {
+                "path": "notification-service/src/main/java/com/example/notification/controller/NotificationPreferenceController.java",
+                "change_type": "CREATE",
+                "reason": "Implement API endpoints for managing user notification preferences."
+            },
+            {
+                "path": "notification-service/src/main/java/com/example/notification/service/NotificationService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for sending various types of notifications."
+            },
+            {
+                "path": "notification-service/src/main/java/com/example/notification/repository/NotificationPreferenceRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for NotificationPreference entity."
+            },
+            {
+                "path": "notification-service/src/main/java/com/example/notification/model/NotificationPreference.java",
+                "change_type": "CREATE",
+                "reason": "Define NotificationPreference data model."
+            },
+            {
+                "path": "notification-service/src/main/java/com/example/notification/listener/AppointmentEventListener.java",
+                "change_type": "CREATE",
+                "reason": "Consume appointment events from Message Broker to trigger notifications."
+            },
+            {
+                "path": "notification-service/src/main/java/com/example/notification/external/EmailProviderClient.java",
+                "change_type": "CREATE",
+                "reason": "Integrate with external email service provider."
+            },
+            {
+                "path": "notification-service/src/main/java/com/example/notification/external/SmsProviderClient.java",
+                "change_type": "CREATE",
+                "reason": "Integrate with external SMS service provider."
+            },
+            {
+                "path": "reporting-service/src/main/java/com/example/reporting/controller/ReportController.java",
+                "change_type": "CREATE",
+                "reason": "Implement API endpoints for generating and exporting various reports."
+            },
+            {
+                "path": "reporting-service/src/main/java/com/example/reporting/service/ReportService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for data aggregation, analysis, and report generation."
+            },
+            {
+                "path": "reporting-service/src/main/java/com/example/reporting/repository/ReportDataRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for aggregated reporting data (e.g., materialized views or summary tables)."
+            },
+            {
+                "path": "reporting-service/src/main/java/com/example/reporting/listener/DataEventListener.java",
+                "change_type": "CREATE",
+                "reason": "Consume relevant events from Message Broker for data aggregation."
+            },
+            {
+                "path": "reporting-service/src/main/java/com/example/reporting/util/ReportExporter.java",
+                "change_type": "CREATE",
+                "reason": "Utility for exporting reports in CSV and PDF formats."
+            },
+            {
+                "path": "admin-service/src/main/java/com/example/admin/controller/AdminController.java",
+                "change_type": "CREATE",
+                "reason": "Implement API endpoints for system configurations and administrative overviews."
+            },
+            {
+                "path": "admin-service/src/main/java/com/example/admin/service/AdminService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for managing system configurations and interfacing with other services for admin tasks."
+            },
+            {
+                "path": "admin-service/src/main/java/com/example/admin/repository/SystemConfigurationRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for SystemConfiguration entity."
+            },
+            {
+                "path": "admin-service/src/main/java/com/example/admin/model/SystemConfiguration.java",
+                "change_type": "CREATE",
+                "reason": "Define SystemConfiguration data model."
+            },
+            {
+                "path": "admin-service/src/main/java/com/example/admin/client/UserServiceClient.java",
+                "change_type": "CREATE",
+                "reason": "Client for interacting with the UserService for user role/permission management."
+            },
+            {
+                "path": "admin-service/src/main/java/com/example/admin/client/ReportingServiceClient.java",
+                "change_type": "CREATE",
+                "reason": "Client for interacting with the ReportingService to fetch reports."
+            },
+            {
+                "path": "api-gateway/config/routes.yml",
+                "change_type": "CREATE",
+                "reason": "Define routing rules to direct requests to appropriate microservices."
+            },
+            {
+                "path": "api-gateway/config/security.yml",
+                "change_type": "CREATE",
+                "reason": "Configure authentication filters (JWT validation), authorization, rate limiting, and SSL termination."
+            },
+            {
+                "path": "api-gateway/Dockerfile",
+                "change_type": "CREATE",
+                "reason": "Dockerfile for deploying the API Gateway."
+            },
+            {
+                "path": "message-broker/config/topics.yml",
+                "change_type": "CREATE",
+                "reason": "Define Kafka/RabbitMQ topics for inter-service communication (e.g., appointment-events, user-events, audit-events)."
+            },
+            {
+                "path": "audit-log-service/src/main/java/com/example/audit/controller/AuditLogController.java",
+                "change_type": "CREATE",
+                "reason": "Optional: API endpoint for querying audit logs (if exposed)."
+            },
+            {
+                "path": "audit-log-service/src/main/java/com/example/audit/service/AuditLogService.java",
+                "change_type": "CREATE",
+                "reason": "Implement business logic for storing and managing audit logs."
+            },
+            {
+                "path": "audit-log-service/src/main/java/com/example/audit/repository/AuditLogRepository.java",
+                "change_type": "CREATE",
+                "reason": "Data access layer for AuditLog entity."
+            },
+            {
+                "path": "audit-log-service/src/main/java/com/example/audit/model/AuditLog.java",
+                "change_type": "CREATE",
+                "reason": "Define AuditLog data model."
+            },
+            {
+                "path": "audit-log-service/src/main/java/com/example/audit/listener/AuditEventListener.java",
+                "change_type": "CREATE",
+                "reason": "Consume audit events from Message Broker to persist them."
+            },
+            {
+                "path": "shared-library/src/main/java/com/example/common/event/AppointmentEvent.java",
+                "change_type": "CREATE",
+                "reason": "Common DTO for appointment-related events."
+            },
+            {
+                "path": "shared-library/src/main/java/com/example/common/event/UserEvent.java",
+                "change_type": "CREATE",
+                "reason": "Common DTO for user-related events."
+            },
+            {
+                "path": "shared-library/src/main/java/com/example/common/event/ProfileEvent.java",
+                "change_type": "CREATE",
+                "reason": "Common DTO for profile-related events."
+            },
+            {
+                "path": "shared-library/src/main/java/com/example/common/event/AuditEvent.java",
+                "change_type": "CREATE",
+                "reason": "Common DTO for audit events."
+            }
         ],
-        risk_assessment: "This is a high-complexity, greenfield project involving the development and integration of multiple microservices. Key risks include:\n\n1.  **Integration Complexity**: Significant challenges in ensuring seamless, fault-tolerant, and consistent communication between the API Gateway and six distinct microservices, as well as between the microservices themselves via a Message Broker. This includes managing data consistency across services that might hold overlapping data (e.g., Doctor details in User, Appointment, and Clinic Config services).\n2.  **Data Integrity and Consistency**: Critical for patient, doctor, and appointment data. Ensuring transactional integrity and eventual consistency across distributed services, especially with asynchronous messaging, requires careful design and robust error handling.\n3.  **Security**: Implementing robust authentication (OTP, doctor login) and authorization across all API endpoints and services, protecting sensitive patient data, and securing inter-service communication channels are paramount.\n4.  **Scalability and Performance**: While a microservice architecture is chosen for scalability, the design of database schemas, API endpoints, message processing, and external integrations must be optimized to handle anticipated load and ensure low latency.\n5.  **Operational Overhead**: Deploying, monitoring, and managing six independent microservices, a gateway, a message broker, and a database introduces significant operational complexity. Robust CI/CD pipelines, logging, and monitoring solutions are essential.\n6.  **External Dependencies**: Reliance on external SMS and Email providers introduces potential points of failure, latency, and cost considerations that need to be managed.\n7.  **Testing Complexity**: Comprehensive end-to-end testing, including integration tests, performance tests, and security tests across all services and their interactions, will be extensive and crucial for ensuring system reliability and correctness.\n8.  **Business Logic Complexity**: Features like appointment scheduling with restrictions, buffer times, and availability management, along with OTP flows and reporting, involve intricate business logic that needs thorough validation."
+        "database_migrations": [
+            "V1__create_users_table.sql: Create 'users' table with id, email, mobileNumber, passwordHash, roleId, mfaEnabled, status, createdAt, updatedAt columns and unique constraints.",
+            "V2__create_roles_table.sql: Create 'roles' table with id, name, description columns and unique constraint on name.",
+            "V3__create_patient_profiles_table.sql: Create 'patient_profiles' table with id, userId, firstName, lastName, dateOfBirth, gender, address, contactNumber, emergencyContactName, emergencyContactNumber, createdAt, updatedAt columns and unique constraint on userId.",
+            "V4__create_doctor_profiles_table.sql: Create 'doctor_profiles' table with id, userId, firstName, lastName, specialization, qualifications, experienceYears, clinicAddress, contactNumber, createdAt, updatedAt columns and unique constraint on userId.",
+            "V5__create_availability_slots_table.sql: Create 'availability_slots' table with id, doctorId, startTime, endTime, status, appointmentId, createdAt, updatedAt columns.",
+            "V6__create_appointments_table.sql: Create 'appointments' table with id, patientId, doctorId, slotId, appointmentTime, status, reason, bookingDate, createdAt, updatedAt columns and unique constraint on slotId.",
+            "V7__create_notification_preferences_table.sql: Create 'notification_preferences' table with id, userId, type, enabled, frequency, createdAt, updatedAt columns.",
+            "V8__create_system_configurations_table.sql: Create 'system_configurations' table with id, key, value, description, lastUpdatedBy, updatedAt columns and unique constraint on key.",
+            "V9__create_audit_logs_table.sql: Create 'audit_logs' table with id, userId, action, entityType, entityId, timestamp, details (JSONB) columns.",
+            "V10__add_foreign_key_constraints.sql: Add foreign key constraints for roleId in users, userId in patient_profiles, doctor_profiles, notification_preferences, lastUpdatedBy in system_configurations, doctorId in availability_slots, patientId, doctorId, slotId in appointments, userId in audit_logs.",
+            "V11__add_indices_for_performance.sql: Add indices on frequently queried columns like email, mobileNumber (users), userId (profiles, preferences), doctorId (availability, appointments), patientId (appointments), timestamp (audit_logs)."
+        ],
+        "risk_assessment": "High Risk: This implementation involves developing 10 new microservices and integrating them with an API Gateway, Message Broker, and a PostgreSQL database. The scope is extensive, covering critical functionalities like authentication, authorization (RBAC), scheduling, notifications, and reporting. Key risk factors include:\n- **Complexity**: Managing numerous new services, each with its own codebase, deployment, and operational concerns.\n- **Integration**: High dependency on inter-service communication via REST and Message Broker, requiring robust error handling and resilience patterns.\n- **Security**: Handling sensitive patient data (PHI/PII) and implementing robust security features (MFA, secure password storage, JWT, RBAC, data encryption) is paramount and complex.\n- **Data Consistency**: Ensuring data consistency across multiple services and a distributed database environment.\n- **Performance & Scalability**: Designing for high availability and scalability from the outset, especially for scheduling and reporting.\n- **Operational Overhead**: Significant effort required for CI/CD, monitoring, logging, and incident management for a distributed system.\n- **Testing**: Comprehensive unit, integration, and end-to-end testing will be critical due to the interconnected nature of the services.\nThis project requires an experienced team, meticulous planning, phased implementation, and a strong focus on automated testing and observability."
     },
-    estimation: {
-        total_hours: 1168.0,
-        breakdown: [
-            { task_name: "API Gateway Design & Configuration (routing, rate limiting, load balancing)", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "API Gateway Authentication & Authorization Middleware Implementation", hours: 24.0, complexity: "HIGH" },
-            { task_name: "API Gateway Testing & Integration with Microservices", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "User Service: Database Schema & Migrations (Patient, Doctor, OTP)", hours: 8.0, complexity: "MEDIUM" },
-            { task_name: "User Service: Data Models (Patient, Doctor, OTP)", hours: 8.0, complexity: "LOW" },
-            { task_name: "User Service: Repositories (Patient, Doctor, OTP)", hours: 12.0, complexity: "MEDIUM" },
-            { task_name: "User Service: Patient Business Logic (registration, OTP, profile management)", hours: 24.0, complexity: "HIGH" },
-            { task_name: "User Service: Doctor Business Logic (login, profile retrieval)", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "User Service: REST Controllers (Patient, Doctor)", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "User Service: Event Publisher (User Registration Events)", hours: 8.0, complexity: "MEDIUM" },
-            { task_name: "User Service: Unit & Integration Testing", hours: 32.0, complexity: "MEDIUM" },
-            { task_name: "User Service: Code Review & Refinement", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Appointment Service: Database Schema & Migrations (Appointment, DoctorAvailability)", hours: 12.0, complexity: "MEDIUM" },
-            { task_name: "Appointment Service: Data Models (Appointment, DoctorAvailability)", hours: 12.0, complexity: "LOW" },
-            { task_name: "Appointment Service: Repositories (Appointment, DoctorAvailability)", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Appointment Service: Appointment Booking Logic (booking, cancellation, restrictions, buffer times)", hours: 40.0, complexity: "HIGH" },
-            { task_name: "Appointment Service: Doctor Availability Management Logic", hours: 24.0, complexity: "HIGH" },
-            { task_name: "Appointment Service: REST Controllers (Appointment, DoctorAvailability)", hours: 20.0, complexity: "MEDIUM" },
-            { task_name: "Appointment Service: Event Publisher (Appointment Events)", hours: 12.0, complexity: "MEDIUM" },
-            { task_name: "Appointment Service: Doctor Configuration Event Listener", hours: 12.0, complexity: "MEDIUM" },
-            { task_name: "Appointment Service: Unit & Integration Testing", hours: 48.0, complexity: "HIGH" },
-            { task_name: "Appointment Service: Code Review & Refinement", hours: 24.0, complexity: "MEDIUM" },
-            { task_name: "Clinic & Doctor Configuration Service: Database Schema & Migrations (ClinicLocation, DoctorConfig, DoctorClinicLocation)", hours: 10.0, complexity: "MEDIUM" },
-            { task_name: "Clinic & Doctor Configuration Service: Data Models (ClinicLocation, DoctorConfig)", hours: 10.0, complexity: "LOW" },
-            { task_name: "Clinic & Doctor Configuration Service: Repositories (ClinicLocation, DoctorConfig)", hours: 14.0, complexity: "MEDIUM" },
-            { task_name: "Clinic & Doctor Configuration Service: Clinic Management Logic", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Clinic & Doctor Configuration Service: Doctor Configuration Logic", hours: 20.0, complexity: "MEDIUM" },
-            { task_name: "Clinic & Doctor Configuration Service: REST Controllers (Clinic, DoctorConfig)", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Clinic & Doctor Configuration Service: Doctor Configuration Event Publisher", hours: 10.0, complexity: "MEDIUM" },
-            { task_name: "Clinic & Doctor Configuration Service: Unit & Integration Testing", hours: 28.0, complexity: "MEDIUM" },
-            { task_name: "Clinic & Doctor Configuration Service: Code Review & Refinement", hours: 14.0, complexity: "MEDIUM" },
-            { task_name: "Notification Service: SMS & Email Service Integration (external providers)", hours: 24.0, complexity: "HIGH" },
-            { task_name: "Notification Service: Notification Scheduler (reminders, reports)", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Notification Service: User Registration Event Listener", hours: 12.0, complexity: "MEDIUM" },
-            { task_name: "Notification Service: Appointment Event Listener", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Notification Service: Unit & Integration Testing", hours: 32.0, complexity: "MEDIUM" },
-            { task_name: "Notification Service: Code Review & Refinement", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Reporting Service: Database Schema & Migrations (DailyReport)", hours: 6.0, complexity: "LOW" },
-            { task_name: "Reporting Service: Data Model (DailyReport)", hours: 6.0, complexity: "LOW" },
-            { task_name: "Reporting Service: Repository (DailyReportRepository)", hours: 8.0, complexity: "MEDIUM" },
-            { task_name: "Reporting Service: Report Generation Logic (Excel format)", hours: 24.0, complexity: "HIGH" },
-            { task_name: "Reporting Service: REST Controller (Report Generation/Retrieval)", hours: 12.0, complexity: "MEDIUM" },
-            { task_name: "Reporting Service: Appointment Event Listener", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Reporting Service: Daily Report Scheduler", hours: 12.0, complexity: "MEDIUM" },
-            { task_name: "Reporting Service: Unit & Integration Testing", hours: 28.0, complexity: "MEDIUM" },
-            { task_name: "Reporting Service: Code Review & Refinement", hours: 14.0, complexity: "MEDIUM" },
-            { task_name: "Message Broker: Topic/Queue Definition & Configuration", hours: 8.0, complexity: "LOW" },
-            { task_name: "Message Broker: Initial Setup & Validation (if not existing)", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Database Migrations: Consolidate & Review All DDL/DML", hours: 16.0, complexity: "MEDIUM" },
-            { task_name: "Database Migrations: Initial Data Seeding (if required)", hours: 8.0, complexity: "LOW" },
-            { task_name: "Overall End-to-End Integration Testing (Gateway, Services, Broker)", hours: 64.0, complexity: "HIGH" },
-            { task_name: "Security Hardening (secrets management, vulnerability scans, service-level auth)", hours: 32.0, complexity: "HIGH" },
-            { task_name: "Centralized Logging, Monitoring, and Alerting Setup", hours: 32.0, complexity: "HIGH" },
-            { task_name: "CI/CD Pipeline Configuration for all Microservices", hours: 40.0, complexity: "HIGH" },
-            { task_name: "Deployment & Infrastructure as Code (initial setup)", hours: 40.0, complexity: "HIGH" },
-            { task_name: "Overall System Documentation (architecture, runbooks, API docs)", hours: 24.0, complexity: "MEDIUM" },
-            { task_name: "Project Management & Coordination Overhead", hours: 40.0, complexity: "MEDIUM" }
+    "estimation": {
+        "total_hours": 1388.0,
+        "breakdown": [
+            {
+                "task_name": "Shared Library - Design & Develop Event DTOs",
+                "hours": 8.0,
+                "complexity": "Low"
+            },
+            {
+                "task_name": "Database - Schema Design & Migrations (V1-V11)",
+                "hours": 40.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "AuthService - API & Business Logic (Auth, MFA)",
+                "hours": 60.0,
+                "complexity": "High"
+            },
+            {
+                "task_name": "AuthService - Data Layer & Security Configuration",
+                "hours": 40.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "AuthService - Event Publishing to Message Broker",
+                "hours": 16.0,
+                "complexity": "Low"
+            },
+            {
+                "task_name": "UserService - API & Business Logic (Roles, RBAC)",
+                "hours": 50.0,
+                "complexity": "High"
+            },
+            {
+                "task_name": "UserService - Data Layer & RBAC Logic",
+                "hours": 30.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "UserService - Event Publishing to Message Broker",
+                "hours": 12.0,
+                "complexity": "Low"
+            },
+            {
+                "task_name": "API Gateway - Configuration (Routing, Security, Rate Limiting)",
+                "hours": 40.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "Message Broker - Topic Definition & Basic Setup",
+                "hours": 24.0,
+                "complexity": "Low"
+            },
+            {
+                "task_name": "ProfileService - API & Business Logic (Patient/Doctor Profiles)",
+                "hours": 60.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "ProfileService - Data Layer (Patient/Doctor Profile Repositories)",
+                "hours": 30.0,
+                "complexity": "Low"
+            },
+            {
+                "task_name": "ProfileService - Event Publishing to Message Broker",
+                "hours": 12.0,
+                "complexity": "Low"
+            },
+            {
+                "task_name": "SchedulingService - API & Business Logic (Availability, Appointments)",
+                "hours": 80.0,
+                "complexity": "High"
+            },
+            {
+                "task_name": "SchedulingService - Data Layer (Availability/Appointment Repositories)",
+                "hours": 40.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "SchedulingService - Event Publishing to Message Broker",
+                "hours": 16.0,
+                "complexity": "Low"
+            },
+            {
+                "task_name": "NotificationService - API & Business Logic (Preferences, Sending)",
+                "hours": 50.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "NotificationService - Data Layer & Appointment Event Listener",
+                "hours": 30.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "NotificationService - External Provider Integration (Email/SMS)",
+                "hours": 40.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "ReportingService - API & Business Logic (Aggregation, Report Generation)",
+                "hours": 60.0,
+                "complexity": "High"
+            },
+            {
+                "task_name": "ReportingService - Data Layer & Event Listener for Aggregation",
+                "hours": 40.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "ReportingService - Report Export Utility (CSV/PDF)",
+                "hours": 20.0,
+                "complexity": "Low"
+            },
+            {
+                "task_name": "AdminService - API & Business Logic (System Config, Admin Tasks)",
+                "hours": 50.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "AdminService - Data Layer & Client Integrations (UserService, ReportingService)",
+                "hours": 30.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "AuditLogService - API (Optional) & Business Logic",
+                "hours": 30.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "AuditLogService - Data Layer & Audit Event Listener",
+                "hours": 20.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "CI/CD Pipeline Setup for all Microservices",
+                "hours": 80.0,
+                "complexity": "High"
+            },
+            {
+                "task_name": "Monitoring & Logging Configuration (Centralized)",
+                "hours": 60.0,
+                "complexity": "High"
+            },
+            {
+                "task_name": "Comprehensive Security Review & Hardening",
+                "hours": 40.0,
+                "complexity": "High"
+            },
+            {
+                "task_name": "System Documentation (API, Architecture, Operational Runbooks)",
+                "hours": 60.0,
+                "complexity": "Medium"
+            },
+            {
+                "task_name": "Integration & End-to-End Testing",
+                "hours": 120.0,
+                "complexity": "High"
+            },
+            {
+                "task_name": "Initial Deployment & Release Management",
+                "hours": 40.0,
+                "complexity": "Medium"
+            }
         ],
-        cost_estimate: "$115,000 - $175,000",
-        timeline_weeks: 14.0,
-        assumptions_used: [
-            "Existing cloud infrastructure (e.g., AWS, Azure, GCP) is available and configured for microservices deployment.",
-            "A message broker (e.g., Kafka, RabbitMQ) instance is available or easily provisioned.",
-            "A relational database (e.g., PostgreSQL) instance is available or easily provisioned.",
-            "External SMS/Email provider accounts are already set up and API keys are available.",
-            "Team members are proficient in Java/Spring Boot, microservices architecture, and cloud deployments.",
-            "No complex UI/frontend development is included in this estimate; this is purely backend and infrastructure.",
-            "Detailed requirements and acceptance criteria for all features are stable and available.",
-            "Standard CI/CD tools (e.g., Jenkins, GitLab CI, GitHub Actions) are available.",
-            "The 'Effort Multiplier: 1.0' from the rule engine is applied, meaning no additional blanket percentage is added for risk, but risks are factored into individual task estimates.",
-            "The estimate includes development, unit testing, integration testing, code review, and basic documentation. Performance testing and extensive security audits are not fully covered and might require additional effort."
+        "cost_estimate": "$166,560",
+        "timeline_weeks": 14.0,
+        "assumptions_used": [
+            "Team composition: 3-4 experienced backend engineers, 1 dedicated QA/SDET, 1 DevOps engineer (shared).",
+            "Existing infrastructure: Cloud environment (AWS/Azure/GCP) is already provisioned and configured for basic services.",
+            "Tooling: CI/CD tools (e.g., Jenkins, GitLab CI, GitHub Actions), monitoring tools (e.g., Prometheus, Grafana, ELK stack) are available.",
+            "Database: PostgreSQL instance is managed and available.",
+            "Message Broker: Kafka/RabbitMQ cluster is managed and available.",
+            "External services: Email/SMS providers are identified and have existing API access.",
+            "Requirements stability: Requirements are well-defined and will not undergo significant changes during development.",
+            "Effort Multiplier: While the rule engine stated 'LOW' risk and '1.0' multiplier, the detailed impact analysis and risk assessment clearly indicate 'High Risk' due to complexity, integration, and security. My estimates reflect this inherent complexity rather than strictly adhering to a '1.0' multiplier on a simplified baseline.",
+            "No UI/Frontend development is included in this estimate.",
+            "No dedicated project manager or scrum master time is explicitly estimated here, assuming it's covered by overhead or shared resources.",
+            "Average blended hourly rate for engineers (including overhead) is $120/hour for cost estimation."
         ]
     },
-    explanation: {
-        overview: "This project involves the development of a new, high-complexity microservices-based system. It encompasses 17 functional and 6 non-functional requirements, utilizing 8 core components, 7 data models, and 14 API endpoints. The estimated effort is 1168 hours over 14 weeks, with a cost ranging from $115,000 to $175,000. This is a greenfield initiative with significant business impact, affecting 8 existing components and requiring 44 file changes.",
-        key_risks: [
-            "Integration Complexity: Ensuring seamless and consistent communication between the API Gateway and six microservices, and among microservices via a Message Broker, especially with overlapping data.",
-            "Data Integrity and Consistency: Maintaining transactional integrity and eventual consistency for critical patient, doctor, and appointment data across distributed services, particularly with asynchronous messaging.",
-            "Security: Implementing robust authentication (OTP, doctor login) and authorization across all API endpoints, protecting sensitive patient data, and securing inter-service communication.",
-            "Scalability and Performance: Optimizing database schemas, API endpoints, message processing, and external integrations to handle anticipated load and ensure low latency.",
-            "Operational Overhead: Managing the deployment, monitoring, and maintenance of six independent microservices, a gateway, a message broker, and a database, requiring robust CI/CD, logging, and monitoring.",
-            "External Dependencies: Reliance on external SMS and Email providers introduces potential points of failure, latency, and cost considerations.",
-            "Testing Complexity: Extensive end-to-end, integration, performance, and security testing across all services and their interactions is crucial for reliability.",
-            "Business Logic Complexity: Intricate business logic for features like appointment scheduling with restrictions, buffer times, availability management, OTP flows, and reporting requires thorough validation."
+    "explanation": {
+        "overview": "This project involves the development of a new system comprising 10 microservices to deliver critical functionalities such as authentication, authorization, scheduling, notifications, and reporting. It requires significant integration with an API Gateway, Message Broker, and a PostgreSQL database. The estimated effort is 1388 hours over 14 weeks, with a projected cost of $166,560. The implementation is categorized as high risk due to its complexity and the sensitive nature of the data involved.",
+        "key_risks": [
+            "Complexity: Managing numerous new microservices, each with its own codebase, deployment, and operational concerns, introduces significant complexity.",
+            "Integration: High dependency on inter-service communication via REST and a Message Broker necessitates robust error handling and resilience patterns.",
+            "Security: Handling sensitive patient data (PHI/PII) requires meticulous implementation of robust security features like MFA, secure password storage, JWT, RBAC, and data encryption.",
+            "Data Consistency: Ensuring data consistency across multiple services and a distributed database environment poses a significant challenge.",
+            "Performance & Scalability: Designing for high availability and scalability from the outset is crucial, especially for scheduling and reporting functionalities.",
+            "Operational Overhead: A distributed system demands substantial effort for CI/CD, monitoring, logging, and incident management.",
+            "Testing: Comprehensive unit, integration, and end-to-end testing are critical due to the interconnected nature of the services."
         ],
-        recommendation: "Proceed with caution. The project is critical for business operations but carries significant technical complexity and inherent risks. A phased approach, robust risk mitigation strategies, and continuous stakeholder engagement are essential to ensure successful delivery and operational stability.",
-        technical_summary: "The proposed architecture is a microservices-based system comprising an API Gateway, six distinct microservices, and a Message Broker for inter-service communication. It defines 7 data models and exposes 14 API endpoints. The implementation will involve 17 functional and 6 non-functional requirements, leading to changes across 8 existing components and approximately 44 file modifications. Key technical challenges include managing distributed data consistency, securing inter-service communication, and ensuring the scalability and performance of the entire ecosystem."
+        "recommendation": "Proceed with caution. This project is critical but carries a high risk profile. It requires an experienced team, meticulous planning, a phased implementation approach, and a strong focus on automated testing, observability, and robust security measures to mitigate identified risks effectively.",
+        "technical_summary": "The proposed architecture involves developing 10 new microservices, integrating them with an API Gateway, a Message Broker, and a PostgreSQL database. The system will support 32 functional and 12 non-functional requirements, impacting 11 existing components and requiring 63 file changes. Key functionalities include authentication, authorization (RBAC), scheduling, notifications, and reporting. The design must account for high availability, scalability, and stringent security protocols for sensitive data."
     },
-    risk_level: "MEDIUM"
+    "risk_level": "low"
 };

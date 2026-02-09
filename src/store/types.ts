@@ -96,7 +96,7 @@ export interface Impact {
 export interface EstimationBreakdown {
     task_name: string;
     hours: number;
-    complexity: 'LOW' | 'MEDIUM' | 'HIGH';
+    complexity: 'Low' | 'Medium' | 'High';
 }
 
 // Estimation section
@@ -129,7 +129,7 @@ export interface AnalysisResponse {
     impact: Impact;
     estimation: Estimation;
     explanation: Explanation;
-    risk_level: 'LOW' | 'MEDIUM' | 'HIGH';
+    risk_level: 'low' | 'medium' | 'high';
 }
 
 export interface AnalysisState {

@@ -10,11 +10,11 @@ interface EstimationDashboardProps {
 
 type SortBy = 'complexity' | 'hours';
 
-const getComplexityColor = (complexity: 'LOW' | 'MEDIUM' | 'HIGH') => {
+const getComplexityColor = (complexity: 'Low' | 'Medium' | 'High') => {
     switch (complexity) {
-        case 'HIGH': return { bg: 'bg-red-500', text: 'text-red-400', badge: 'bg-red-500/20 text-red-400 border-red-500/30' };
-        case 'MEDIUM': return { bg: 'bg-amber-500', text: 'text-amber-400', badge: 'bg-amber-500/20 text-amber-400 border-amber-500/30' };
-        case 'LOW': return { bg: 'bg-emerald-500', text: 'text-emerald-400', badge: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' };
+        case 'High': return { bg: 'bg-red-500', text: 'text-red-400', badge: 'bg-red-500/20 text-red-400 border-red-500/30' };
+        case 'Medium': return { bg: 'bg-amber-500', text: 'text-amber-400', badge: 'bg-amber-500/20 text-amber-400 border-amber-500/30' };
+        case 'Low': return { bg: 'bg-emerald-500', text: 'text-emerald-400', badge: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' };
     }
 };
 
@@ -32,7 +32,7 @@ const EstimationDashboard: React.FC<EstimationDashboardProps> = memo(({
                 return b.hours - a.hours;
             }
             // Sort by complexity
-            const order = { HIGH: 0, MEDIUM: 1, LOW: 2 };
+            const order = { High: 0, Medium: 1, Low: 2 };
             return order[a.complexity] - order[b.complexity];
         });
     }, [breakdown, sortBy]);
@@ -43,9 +43,9 @@ const EstimationDashboard: React.FC<EstimationDashboardProps> = memo(({
     );
 
     const complexityStats = useMemo(() => ({
-        high: breakdown.filter(b => b.complexity === 'HIGH').length,
-        medium: breakdown.filter(b => b.complexity === 'MEDIUM').length,
-        low: breakdown.filter(b => b.complexity === 'LOW').length,
+        high: breakdown.filter(b => b.complexity === 'High').length,
+        medium: breakdown.filter(b => b.complexity === 'Medium').length,
+        low: breakdown.filter(b => b.complexity === 'Low').length,
     }), [breakdown]);
 
     if (breakdown.length === 0) {
@@ -116,8 +116,8 @@ const EstimationDashboard: React.FC<EstimationDashboardProps> = memo(({
                         <button
                             onClick={() => setSortBy('complexity')}
                             className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${sortBy === 'complexity'
-                                    ? 'bg-[#FF9FFC]/20 text-[#FF9FFC]'
-                                    : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                                ? 'bg-[#FF9FFC]/20 text-[#FF9FFC]'
+                                : 'text-gray-400 hover:text-white hover:bg-gray-800'
                                 }`}
                             aria-pressed={sortBy === 'complexity'}
                         >
@@ -126,8 +126,8 @@ const EstimationDashboard: React.FC<EstimationDashboardProps> = memo(({
                         <button
                             onClick={() => setSortBy('hours')}
                             className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${sortBy === 'hours'
-                                    ? 'bg-[#FF9FFC]/20 text-[#FF9FFC]'
-                                    : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                                ? 'bg-[#FF9FFC]/20 text-[#FF9FFC]'
+                                : 'text-gray-400 hover:text-white hover:bg-gray-800'
                                 }`}
                             aria-pressed={sortBy === 'hours'}
                         >

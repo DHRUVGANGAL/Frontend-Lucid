@@ -8,9 +8,9 @@ interface DecisionHeroProps {
     costEstimate: string;
 }
 
-const getRiskLevelStyles = (riskLevel: 'LOW' | 'MEDIUM' | 'HIGH') => {
+const getRiskLevelStyles = (riskLevel: 'low' | 'medium' | 'high') => {
     switch (riskLevel) {
-        case 'LOW':
+        case 'low':
             return {
                 bg: 'bg-emerald-500/20',
                 border: 'border-emerald-500',
