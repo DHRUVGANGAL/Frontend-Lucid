@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
@@ -12,21 +13,21 @@ const Navbar: React.FC = () => {
         <nav className="w-full px-6 py-4 bg-transparent backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
             <div className="container mx-auto flex justify-between items-center">
 
-                <a
-                    href="#home"
+                <Link
+                    to="/"
                     className="font-mono text-3xl font-bold text-white drop-shadow-lg"
                 >
                     Lucid
-                </a>
+                </Link>
 
 
                 <div className="hidden md:flex items-center space-x-6">
-                    <a
-                        href="#home"
+                    <Link
+                        to="/"
                         className="font-mono text-sm text-white transition-colors"
                     >
                         Home
-                    </a>
+                    </Link>
 
                     <a
                         href="#about"
@@ -70,13 +71,13 @@ const Navbar: React.FC = () => {
             {isMenuOpen && (
                 <div className="absolute left-0 right-0 bg-black bg-opacity-90 z-50 md:hidden mt-2">
                     <div className="flex flex-col items-center py-4 space-y-4">
-                        <a
-                            href="#home"
+                        <Link
+                            to="/"
                             onClick={() => setIsMenuOpen(false)}
                             className="font-mono text-white hover:text-white transition-colors"
                         >
                             Home
-                        </a>
+                        </Link>
 
                         <a
                             href="#about"
