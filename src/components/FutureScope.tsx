@@ -56,9 +56,9 @@ const FutureScope: React.FC = () => {
                         className="cursor-target p-8 rounded-2xl bg-gray-900/80 border border-[#DE443B]"
                         spotlightColor="rgba(222, 68, 59, 0.3)"
                     >
-                        <h3 className="text-2xl font-bold text-white mb-4">AI Model Integration</h3>
+                        <h3 className="text-2xl font-bold text-white mb-4">Knowledge Transfer</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            Transform technical documentation into interactive AI guides, helping new developers understand the "why" behind complex architectural choices instantly.
                         </p>
                     </SpotlightCard>
 
@@ -66,9 +66,9 @@ const FutureScope: React.FC = () => {
                         className="cursor-target p-8 rounded-2xl bg-gray-900/80 border border-[#DE443B]"
                         spotlightColor="rgba(222, 68, 59, 0.3)"
                     >
-                        <h3 className="text-2xl font-bold text-white mb-4">Real-time Collaboration</h3>
+                        <h3 className="text-2xl font-bold text-white mb-4">Continuous Learning</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            Feedback loop from delivered outcomes to refine risk/confidence models and estimation bias corrections.
                         </p>
                     </SpotlightCard>
 
@@ -76,14 +76,11 @@ const FutureScope: React.FC = () => {
                         className="cursor-target p-8 rounded-2xl bg-gray-900/80 border border-[#DE443B]"
                         spotlightColor="rgba(222, 68, 59, 0.3)"
                     >
-                        <h3 className="text-2xl font-bold text-white mb-4">Advanced Analytics</h3>
+                        <h3 className="text-2xl font-bold text-white mb-4">Implementation Verification</h3>
                         <p className="text-gray-400 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-                        </p>
-                    </SpotlightCard>
-                </div>
-            </div>
-        </div>
+                            Continuous verification that code delivered and features match approved requirements, architecture decisions, and business goals, ensuring full coverage and quality.   </p>
+                    </SpotlightCard>  </div>
+            </div></div>
     );
 };
 
