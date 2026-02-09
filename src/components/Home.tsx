@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom';
 import Balatro from './Balatro';
 import About from './About';
 import FutureScope from './FutureScope';
+import TargetCursor from './TargetCursor';
 
 const Home: React.FC = () => {
     return (
         <div className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
-            {/* Hero Section with Balatro Background */}
+            <TargetCursor targetSelector=".cursor-target" />
             <section id="home" className="relative min-h-screen w-full overflow-hidden snap-start">
                 {/* Balatro Background */}
                 <div className="absolute inset-0 z-0">
@@ -35,7 +36,7 @@ const Home: React.FC = () => {
                     <div className="flex gap-6">
                         <Link
                             to="/agent"
-                            className="px-10 py-4 bg-white text-black text-lg font-bold rounded-xl hover:scale-105 transition-all duration-300"
+                            className="cursor-target px-10 py-4 bg-white text-black text-lg font-bold rounded-xl hover:scale-105 transition-all duration-300"
                             style={{
                                 boxShadow: '0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1)'
                             }}
@@ -44,7 +45,7 @@ const Home: React.FC = () => {
                         </Link>
                         <a
                             href="#about"
-                            className="px-10 py-4 border-2 border-white text-white text-lg font-bold rounded-xl hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
+                            className="cursor-target px-10 py-4 border-2 border-white text-white text-lg font-bold rounded-xl hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
                             style={{
                                 boxShadow: '0 0 20px rgba(255, 255, 255, 0.3)'
                             }}

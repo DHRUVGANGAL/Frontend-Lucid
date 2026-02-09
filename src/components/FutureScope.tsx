@@ -1,29 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
 import ColorBends from './ColorBends';
 import SpotlightCard from './SpotlightCard';
-import TargetCursor from './TargetCursor';
 
 const FutureScope: React.FC = () => {
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const [isInView, setIsInView] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                setIsInView(entry.isIntersecting);
-            },
-            { threshold: 0.3 }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
-        }
-
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <div ref={sectionRef} className="relative z-20 min-h-screen w-full py-20 px-6 flex flex-col items-center justify-center">
+        <div className="relative z-20 min-h-screen w-full py-20 px-6 flex flex-col items-center justify-center">
             <div className="absolute inset-0 z-0">
                 <ColorBends
                     colors={["#DE443B", "#006BB4", "#4B0082"]}
@@ -40,7 +20,6 @@ const FutureScope: React.FC = () => {
                 />
             </div>
 
-            {isInView && <TargetCursor targetSelector=".cursor-target" />}
             <div className="relative z-10">
                 <h2
                     className="text-6xl md:text-7xl font-black text-white text-center mb-20 tracking-wider"
