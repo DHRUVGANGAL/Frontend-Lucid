@@ -12,7 +12,8 @@ export const startAnalysis = createAsyncThunk<
     'analysis/startAnalysis',
     async (request, { rejectWithValue }) => {
         try {
-            const API_URL = `${API_BASE_URL}/api/analysis`;
+
+            const API_URL = `${API_BASE_URL}/api/v1/analyze-file`;
 
             const formData = new FormData();
             formData.append('file', request.file);
