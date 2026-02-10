@@ -2,7 +2,7 @@ interface DecisionHeroProps {
     projectId: string;
     decisionId: string;
     contextType: string;
-    riskLevel: 'LOW' | 'MEDIUM' | 'HIGH';
+    riskLevel: 'low' | 'medium' | 'high';
     confidenceScore: number;
     timelineWeeks: number;
     costEstimate: string;
@@ -17,14 +17,14 @@ const getRiskLevelStyles = (riskLevel: 'low' | 'medium' | 'high') => {
                 text: 'text-emerald-400',
                 dot: 'bg-emerald-500',
             };
-        case 'MEDIUM':
+        case 'medium':
             return {
                 bg: 'bg-amber-500/20',
                 border: 'border-amber-500',
                 text: 'text-amber-400',
                 dot: 'bg-amber-500',
             };
-        case 'HIGH':
+        case 'high':
             return {
                 bg: 'bg-red-500/20',
                 border: 'border-red-500',
