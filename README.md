@@ -79,10 +79,3 @@ src/
 
 - [Backend Lucid](https://github.com/DHRUVGANGAL/backend-lucid) - Backend API
 
-## 📄 License
-
-MIT License
-
----
-
-Built with ❤️ by [Dhruv Gangal](https://github.com/DHRUVGANGAL)
